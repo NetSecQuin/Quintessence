@@ -8,4 +8,4 @@ Exactly as described. Cyber Security Research, starting at the highest purist le
 
 #### [🔴]() - Offensive Security
 
-#### [🔵]() - Defensive Security
+#### [🔵](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/BlueLanding.md) - Defensive Security

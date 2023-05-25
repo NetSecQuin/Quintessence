@@ -1,12 +1,8 @@
-# Quintessence
+# Defensive Security
 
 🔍 The purist form of something.
 
-## Getting Started
 
-Exactly as described. Cyber Security Research, starting at the highest purist level. 
-
-This repository can only be navigated by using the table of contents below. 
 
 ## Table of Contents
 
