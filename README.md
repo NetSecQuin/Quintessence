@@ -10,27 +10,27 @@ This repository can only be navigated by using the table of contents below.
 
 ## Table of Contents
 
-[Cheatsheets]() - A list of cheatsheets for a variety of use cases.
+[Cheatsheets](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/Cheatsheets.md) - A list of cheatsheets for a variety of use cases.
 
-[Incident Response]() - Resources including MITRE attack chain, Endpoint Security, Application Security, and more. 
+[Incident Response](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/Incident%20Response.md) - Resources including MITRE attack chain, Endpoint Security, Application Security, and more. 
 
-[Digital Forensics]() - Linux & Windows forensics cheatsheets, library links, scripts, and helpful hints. 
+[Digital Forensics](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/Forensics.md) - Linux & Windows forensics cheatsheets, library links, scripts, and helpful hints. 
 
-[Malware Analysis]() - Links, Cheatsheets, and more
+[Malware Analysis](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/Malware%20Analysis.md) - Links, Cheatsheets, and more
 
-[Vulnerability Management]() - Vulnerability Scanning Tools, Exploit Databases, CVSS Information
+[Vulnerability Management](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/Vulnerability%20Management.md) - Vulnerability Scanning Tools, Exploit Databases, CVSS Information
 
-[Logging]() - Resources and advice on logging best practices and configuration
+[Logging](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/Logging.md) - Resources and advice on logging best practices and configuration
 
-[System Administration]() - Some tips and commands to use for system administration
+[System Administration](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/System%20Administration.md) - Some tips and commands to use for system administration
 
 [Google Dorking]() - Google is the #1 hacking tool
 
-[Dark Web]() - Links to ATP sites and forums
+[Dark Web](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/Dark%20Web.md) - Links to ATP sites and forums
 
-[ML & AI]() - Scripts and links to useful AI tools 
+[ML & AI](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/ML%20%26%20AI.md) - Scripts and links to useful AI tools 
 
-[News Resources]() - Assorted news outlets and resources regarding vulnerabilities and security news. 
+[News Resources](https://github.com/NetSecQuin/Quintessence/blob/main/Pages/News%20and%20Resources.md) - Assorted news outlets and resources regarding vulnerabilities and security news. 
 
 ## Authors and Acknowledgment
 
