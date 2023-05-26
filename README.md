@@ -4,11 +4,12 @@
 
 ## Getting Started
 
-Exactly as described. Cyber Security Research, starting at the highest purist level. 
-
-#### [💊](https://github.com/NetSecQuin/Quintessence/blob/main/Red%20Pages/RedLanding.md) - [Offensive Security](https://github.com/NetSecQuin/Quintessence/blob/main/Red%20Pages/RedLanding.md)
+*Cyber Security Research. Take only the prescribed amount.* 
 
 #### [🔵](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/BlueLanding.md) - [Defensive Security](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/BlueLanding.md)
+
+
+#### [💊](https://github.com/NetSecQuin/Quintessence/blob/main/Red%20Pages/RedLanding.md) - [Offensive Security](https://github.com/NetSecQuin/Quintessence/blob/main/Red%20Pages/RedLanding.md)
 
 
 
