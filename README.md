@@ -1,6 +1,7 @@
 # Quintessence
 
 🔍 The purist form of something.
+Original Project was developed in an on-prem instance of gitlab and was lost. This shell of a project will take some time to reconstruct. ⌛ 
 
 ## Getting Started
 
@@ -15,4 +16,4 @@
 
 ## Authors and Acknowledgment
 
-A constant work in progress.
+A constant work in progress. 
