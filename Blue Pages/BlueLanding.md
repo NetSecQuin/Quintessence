@@ -20,6 +20,8 @@
 
 [System Administration](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/System%20Administration.md) - Some tips and commands to use for system administration
 
+[Cloud Security](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security.md) - Resources on Cloud Security Architecture
+
 [Google Dorking](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Google%20Dorking.md) - Google is the #1 hacking tool
 
 [Dark Web](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Dark%20Web.md) - Links to ATP sites and forums
