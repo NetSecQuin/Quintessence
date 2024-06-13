@@ -83,6 +83,8 @@ print(parent1)
 Additionally (I may need to move this section) instead of a parent, you can go through siblings or decendants. 
 ```
 sibling1 = price[0].next_sibling)
+
+# .decendants will give you everything below. .contents will do the same. .children may just give the layer below. 
 decendant = price[0].decendant)
 ```
 
