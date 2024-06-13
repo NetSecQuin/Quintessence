@@ -31,15 +31,18 @@ ModelTag = doc.find_all("h2")
 
 #Limit the child tags to the one you want with the number it appears. Starts with 0. This one was at h2.1
 ModelTag = doc.find_all("h2")[1]
-
-In order to find the text in the HTML, Either locate a searchable string from the website in this case, or use its identifier like '$'. In this case the '$' was included in the price without any space, which made it hard to locate with the $ alone.
 ```
-# price = doc.find_all(string="$168.63")
+If you want to search for data or strings instead of headers, you can do so with *string="value"*
+```
+price = doc.find_all(string="$168.63")
+
+# Optionally you can search both at the same time
+price = doc.find_all(["h1","h2"], string="$163.63")
 ```
 Then Point to the Parent header and print the entire element. By adding more '.parent' statements we can continue to see the grandparents
 ```
-# parent1 = price[0].parent.parent
-# print(parent1)
+parent1 = price[0].parent.parent
+print(parent1)
 ```
 
 ### Store data associated to a tag
@@ -49,7 +52,7 @@ ModelTag = doc.find_all("h2")[1]
 Model = ModelTag.string
 print(Model)
 ```
-In this case the price was enclosed in the 2nd occurance of <noscript><div>$$$</div></noscript>. using find_all to identify the path
+In this case the price was enclosed in the 2nd occurance of `<noscript><div>$$$</div></noscript>`. using find_all to identify the path
 ```
 price_headtag = doc.find_all("noscript")[1]
 price_tag = price_headtag.find_all("div")[0]
