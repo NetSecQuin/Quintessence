@@ -80,6 +80,11 @@ If the identified header is too common in a large dataset, you can point to the 
 parent1 = price[0].parent.parent
 print(parent1)
 ```
+Additionally (I may need to move this section) instead of a parent, you can go through siblings. 
+```
+sibling1 = price[0].next_sibling)
+```
+
 
 ### Store data associated to a tag
 In the below example the model HTML tag was stored in 2nd the h2 header value. (h2.1). Remove the HTML tag with 'ModelTag.string'
