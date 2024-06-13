@@ -1,6 +1,6 @@
 # Python Cheatsheet
 
-# Reading files in
+# Reading and writing to files in
 
 Opens index.html as readonly (r), and read it in as input as f 
 ```
