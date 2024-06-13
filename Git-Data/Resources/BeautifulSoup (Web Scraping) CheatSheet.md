@@ -36,8 +36,9 @@ If you want to search for data or strings instead of headers, you can do so with
 ```
 price = doc.find_all(string="$168.63")
 
-# Optionally you can search both at the same time
+# Optionally you can search both at the same time, or for specific header="value" statements
 price = doc.find_all(["h1","h2"], string="$163.63")
+price = doc.find_all(div="$163.63")
 ```
 Then Point to the Parent header and print the entire element. By adding more '.parent' statements we can continue to see the grandparents
 ```
