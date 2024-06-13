@@ -51,6 +51,10 @@ import re
 
 # This expression will find a dollar sign followed by any number of characters
 price = doc.find_all(text=re.compile("\$.*"))
+
+# This will typically return white space when there is more than one result, therefore we can remove the whitespace with a for loop
+for price in prices:
+  print(price.strip())
 ```
 If the identified header is too common in a large dataset, you can point to the parent header and print the entire element. By adding more '.parent' statements we can continue to see the grandparents
 ```
