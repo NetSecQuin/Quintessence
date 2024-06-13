@@ -80,9 +80,10 @@ If the identified header is too common in a large dataset, you can point to the 
 parent1 = price[0].parent.parent
 print(parent1)
 ```
-Additionally (I may need to move this section) instead of a parent, you can go through siblings. 
+Additionally (I may need to move this section) instead of a parent, you can go through siblings or decendants. 
 ```
 sibling1 = price[0].next_sibling)
+decendant = price[0].decendant)
 ```
 
 
