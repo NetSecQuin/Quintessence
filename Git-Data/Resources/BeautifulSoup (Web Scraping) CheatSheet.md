@@ -5,6 +5,25 @@ BeautifulSoup is a web scraping and parsing utility when paired with the request
 
 ``` from bs4 import BeautifulSoup ```
 
+
+
+### Reading and writing to files
+
+
+```
+# Opens index.html as readonly (r), and read it in as input as f 
+with open("index.html", "r") as f:
+    doc = BeautifulSoup(f, "html.parser")
+
+# Make some changes
+tags = doc.find_all("input", type="text")
+for tag in tags:
+  tag[placeholder]="Edited"
+
+#Open file for writing (w)
+with open("edited_index.html", "w") as f2:
+  file.write(str(doc))
+```
 ### Pulling data with Requests
 
 ```
