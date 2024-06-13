@@ -21,6 +21,17 @@ print(doc.prettify())
 ```
 
 ### Finding the tag containg the desired data
+First try and search based on the expected tags or HTML headers
+```
+# You can search for multiple headers at once
+ModelTag = doc.find_all(["h1","h2","body"])
+
+# Or one header at a time
+ModelTag = doc.find_all("h2")
+
+#Limit the child tags to the one you want with the number it appears. Starts with 0. This one was at h2.1
+ModelTag = doc.find_all("h2")[1]
+
 In order to find the text in the HTML, Either locate a searchable string from the website in this case, or use its identifier like '$'. In this case the '$' was included in the price without any space, which made it hard to locate with the $ alone.
 ```
 # price = doc.find_all(string="$168.63")
