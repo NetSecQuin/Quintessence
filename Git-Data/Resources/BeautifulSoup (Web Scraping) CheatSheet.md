@@ -21,7 +21,7 @@ print(doc.prettify())
 ```
 
 ### Finding the tag containg the desired data
-First try and search based on the expected tags or HTML headers
+Option A.) Search via the HTML headers
 ```
 # You can search for multiple headers at once
 ModelTag = doc.find_all(["h1","h2","body"])
@@ -32,15 +32,27 @@ ModelTag = doc.find_all("h2")
 #Limit the child tags to the one you want with the number it appears. Starts with 0. This one was at h2.1
 ModelTag = doc.find_all("h2")[1]
 ```
-If you want to search for data or strings instead of headers, you can do so with *string="value"*
+Option B.) Search for a string in the webpage.
 ```
 price = doc.find_all(string="$168.63")
-
-# Optionally you can search both at the same time, or for specific header="value" statements
+```
+Option C.) You can search both at the same time
+```
 price = doc.find_all(["h1","h2"], string="$163.63")
+```
+Option D.) If you know the HTML header, you can use header="value" statements
+```
 price = doc.find_all(div="$163.63")
 ```
-Then Point to the Parent header and print the entire element. By adding more '.parent' statements we can continue to see the grandparents
+Option E.) You can use Regular Expressions (Regex)
+```
+# must import re first
+import re
+
+# This expression will find a dollar sign followed by any number of characters
+price = doc.find_all(text=re.compile("\$.*"))
+```
+If the identified header is too common in a large dataset, you can point to the parent header and print the entire element. By adding more '.parent' statements we can continue to see the grandparents
 ```
 parent1 = price[0].parent.parent
 print(parent1)
