@@ -13,14 +13,17 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 - The Region may have certain costs associated to it (Higher electricity costs, infrastructure needs, and regulations impact region costs).
 - The data stored may have certain compliance regualtions around the region or country.
 - Disastor recovery backups may need to be stored at a different data center.
+- Some regions do not offer all AWS services
   
 ## Services
+
+#### [AWS Artificat](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services)
 
 #### [Guard Duty]()
 
 #### [Key Managment Service (KMS)]()
 
-#### [Identify Access Managment (IAM)]()
+#### [Identify Access Managment (IAM)](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/Identity%20%26%20Access%20Management%20(IAM).md)
 
 #### [AWS Systems Manager (ASM)]()
 
