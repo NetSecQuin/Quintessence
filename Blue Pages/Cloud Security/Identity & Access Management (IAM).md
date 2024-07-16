@@ -22,3 +22,5 @@
 #### [AWS STS](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20STS.md) - Temporary credentials for an IAM user that needs permisions of a differnt role for a short time.
 
 #### [AWS Directory Services](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Directory%20Services.md) - Active Directory DCs in AWS. Extended current AD. Build AWS AD. Manage access for AD users to services & resources. 
+
+#### [AWS Cognito](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Cognito.md) - Add/Manage your websites user accounts. Give those users access to credentials that can utalize AWS services. 
