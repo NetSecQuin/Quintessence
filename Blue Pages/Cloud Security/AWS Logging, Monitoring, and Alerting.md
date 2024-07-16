@@ -18,6 +18,8 @@
 
 #### [CloudWatch]() - Instances can have CloudWatch agents installed. Agents report to CloudWatch. CloudWatch logs > Events & Alarms. 
 
+- #### [EventBridge]
+
 #### [AWS Guard Duty](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Guard%20Duty.md) - AWS built in threat detection through intel intel feeds, suspicious anomalie detection, and threat based activity. 
 
 #### [AWS Security Hub](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Security%20Hub.md) - Centralized view for aggregating, organizing, and taking action on security alerts from multiple AWS Services 
