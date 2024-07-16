@@ -23,6 +23,8 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 
 #### [Infrastructure Protection](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Infrastructure%20Protection.md)
 
+#### [Data Protection](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Data%20Protection.md)
+
 ## All Services
 
 #### [AWS Artificat](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services)
@@ -40,6 +42,39 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 #### [AWS Directory Services](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Directory%20Services.md) - Active Directory DCs in AWS. Extended current AD. Build AWS AD. Manage access for AD users to services & resources. 
 
 #### [AWS Cognito](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Cognito.md) - Add/Manage your website's user accounts. Give those users access to credentials that can utalize AWS services. 
+
+[AWS VPC](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20VPC.md) - Creating VPCs to isolate resources with defense-in-depth, via Subnets > NACLs > Security Groups
+
+[AWS Systems Manager (SSM)](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Systems%20Manager.md) - Automate changes, patching, installs, and more across numerous hosts at once. Login directly through SSM agent.
+
+[AWS Firewall Manager](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Firewall%20Manager.md) - Central location to manage firewalls, WAFs, and AWS Services to manage and centrally push changes to gateways. 
+
+[AWS Direct Connect](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Direct%20Connect.md) - Connect internal network or data centers to a location with a physical connection to the AWS Network. Bypassing the public internet. 
+
+[AWS CloudFormation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20CloudFormation.md) - Infrastructure as code through creating and deploying templated configurations into CI/CD pipeline. 
+
+[AWS Inspector](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services) - Vulnerability scanning of instances, containers, and Lambda functions directly integrated into the CI/CD pipeline. 
+
+
+#### [CloudTrail](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20CloudTrail.md) - Every action in an AWS account is an API call. All AWS API calls are documented in CloudTrail. 
+
+#### [CloudWatch] - Instances can have CloudWatch agents installed. Agents report to CloudWatch. CloudWatch logs > Events & Alarms. 
+
+- #### [EventBridge]
+
+#### [AWS Guard Duty](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Guard%20Duty.md) - AWS built in threat detection through intel intel feeds, suspicious anomalie detection, and threat based activity. 
+
+#### [AWS Security Hub](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Security%20Hub.md) - Centralized view for aggregating, organizing, and taking action on security alerts from multiple AWS Services 
+
+#### [AWS Trusted Advisor](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Trusted%20Advisor.md) - Identify places to lower costs. Align with security standards. Improve resiliance and preformance of resources
+
+#### [AWS VPC Flow Logs](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20VPC%20Flow%20Logs.md) - Track network activity to your instances inside a VPC. Troubleshoot connectivity and identify network threats. 
+
+#### [AWS Config](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Config.md) - View current & historic configuration changes to troubleshoot outages or analyze security incidents. 
+
+
+
+## To Be Added or Deleted. 
 
 #### [Guard Duty]()
 
