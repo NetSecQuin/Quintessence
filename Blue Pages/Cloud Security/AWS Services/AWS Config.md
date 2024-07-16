@@ -13,5 +13,6 @@ To learn more, see [AWS Config](https://aws.amazon.com/config/).
 - View current & historic configuration changes to troubleshoot outages or analyze security incidents.
 - Audit and evaluate compliance of your resource configurations with your organization’s policies on a continual basis.
 - Monitor and assses resource configuration changes in order to keep a record of change management and identify unapproved changes.
+  - Compliance-as-Code or Codify your compliance requirements
 
 ![](https://d1.awsstatic.com/Product-Page-Diagram_AWS-Config_Preventative-Proactive-Rules%402x.903337bdfa605eef1031213a125b9a8f94b39903.png)
