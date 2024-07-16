@@ -8,6 +8,7 @@
 - AWS Firewall Manager
 - AWS Direct Connect
 - AWS Cloudformation
+- AWS Inspector
 
 ## Services
 
@@ -20,3 +21,5 @@
 [AWS Direct Connect](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Direct%20Connect.md) - Connect internal network or data centers to a location with a physical connection to the AWS Network. Bypassing the public internet. 
 
 [AWS CloudFormation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20CloudFormation.md) - Infrastructure as code through creating and deploying templated configurations into CI/CD pipeline. 
+
+[AWS Inspector](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services) - Vulnerability scanning of instances, containers, and Lambda functions directly integrated into the CI/CD pipeline. 
