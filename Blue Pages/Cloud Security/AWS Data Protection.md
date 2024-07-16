@@ -16,4 +16,5 @@ While data is being uploaded or moved, it also may need to be encrypted in order
 
 ## Services
 
-[AWS CloudHSM]()
+[AWS CloudHSM]() - Dedicated Hardware Security Modules (HSM) for cryptographic key generation and management. (For certain usecases of sensitive data)
+[AWS KMS]() - AWS Managed HSM for cryptographic key generation and management (Simple and fits most usecases) 
