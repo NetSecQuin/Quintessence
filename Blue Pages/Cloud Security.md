@@ -13,4 +13,4 @@
 
 #### Shared Responsibilitiy
 
-[](https://github.com/NetSecQuin/Quintessence/blob/main/images/cloudsharedresponsibilitymodel.png)
+![](https://github.com/NetSecQuin/Quintessence/blob/main/images/cloudsharedresponsibilitymodel.png)
