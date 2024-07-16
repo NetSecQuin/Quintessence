@@ -9,3 +9,8 @@
 ### [Google Cloud Platform (GCP)]() - Link to come later
 
 ### [Azure Connected Cloud]() - Link to come later
+
+
+#### Shared Responsibilitiy
+
+[](https://github.com/NetSecQuin/Quintessence/blob/main/images/cloudsharedresponsibilitymodel.png)
