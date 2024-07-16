@@ -11,6 +11,6 @@
 ### [Azure Connected Cloud]() - Link to come later
 
 
-#### Shared Responsibilitiy
+## Shared Responsibilitiy
 
 ![](https://github.com/NetSecQuin/Quintessence/blob/main/images/cloudsharedresponsibilitymodel.png)
