@@ -2,7 +2,7 @@
 
 ## AWS Certifications
 
-#### [AWS Certified Security - Specialty SCS-C02)](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Certified%20Security%20-%20Specialty%20SCS-C02.md)
+#### [AWS Certified Security - Specialty SCS-C02](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Certified%20Security%20-%20Specialty%20SCS-C02.md)
 
 ## Services
 
