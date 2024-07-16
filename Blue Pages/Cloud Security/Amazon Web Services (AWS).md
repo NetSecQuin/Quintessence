@@ -21,6 +21,8 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 
 #### [Identify Access Managment (IAM)](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/Identity%20%26%20Access%20Management%20(IAM).md)
 
+#### [Infrastructure Protection](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Infrastructure%20Protection.md)
+
 ## All Services
 
 #### [AWS Artificat](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services)
