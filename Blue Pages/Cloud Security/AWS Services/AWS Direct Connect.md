@@ -12,6 +12,7 @@ To learn more, see [AWS Direct Connect](https://aws.amazon.com/directconnect/).
 
 - Directly connect your internal network or data center to AWS without passing through the full open Internet. Improves latency.
 - Works by connecting to a location with a physical connection to the AWS network.
+- Can also be used to connect two of your companies seperate data centers directly. 
 
 ![](https://d1.awsstatic.com/Networking/direct-connect/product-page-diagram_AWS-Direct-Connect_Connect-to-AWS%402x.d0fb3405f1297ea42ae303735e33fd77ad52a711.png)
 
