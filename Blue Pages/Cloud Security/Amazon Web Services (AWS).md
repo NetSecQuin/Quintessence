@@ -76,18 +76,9 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 
 ## To Be Added or Deleted. 
 
-#### [Guard Duty]()
-
 #### [Key Managment Service (KMS)]()
 
 #### [AWS Systems Manager (ASM)]()
 
 #### [Lambda]()
 
-#### [Security Groups]()
-
-#### [Network Access Control Lists (NACLs)]()
-
-#### [CloudTrail]()
-
-#### [CloudWatch]()
