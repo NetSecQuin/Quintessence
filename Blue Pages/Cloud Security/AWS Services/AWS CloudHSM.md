@@ -1,5 +1,7 @@
 # AWS CloudHSM
 
+![](https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721163600/qQMAeir7CedYq2w0pM_zlw/tincan/1795780_1704469401_o_1hjd4l7tc11hedc913i09dklbhj_zip/assets/ZjRv3m5ZqrjA5_1N_g4K8Gx3Ah5mdgujY.png)
+
 ## Summary
 
 AWS CloudHSM provides hardware security modules (HSM) in the AWS Cloud. An HSM is a computing device that processes cryptographic operations and provides secure storage for cryptographic keys. With CloudHSM, you can generate, store, import, export, and manage cryptographic keys, including symmetric keys and asymmetric key pairs.
