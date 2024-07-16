@@ -1,7 +1,5 @@
 # Identitiy and Access Management
 
-![](https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721149200/GkyF8Mg8z4_WVdL503GbNw/tincan/1795780_1704469401_o_1hjd4l7tc11hedc913i09dklbhj_zip/assets/9_xL-HPU8wGWwxRo_LWdIeb7Tcc9P-wAi.png)
-
 ## Types of AWS Credentials
 
 - Username and Password
@@ -13,12 +11,14 @@
 
 ## IAM Services
 
-#### [AWS Identity IAM Center]()
+#### AWS IAM - Manage Crendential policies and IAM Resources (Groups, Users, Roles, Policies(Permissions), and Identity Providers)
 
-#### [AWS Organizations]()
+#### [AWS Identity IAM Center](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Identity%20IAM%20Center.md) - Configure SSO or SAML from your organizations LDAP (Active Directory) with AWS IAM. 
 
-#### [AWS Secrets Manager]()
+#### [AWS Organizations](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Organizations.md) - Organize multiple AWS accounts at once. Group accounts into OUs. Automate creation of new accounts.
 
-#### [AWS STS]()
+#### [AWS Secrets Manager](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Secrets%20Manager.md) - Manage credentials and Keys. Call API instead of hardcoding credentials. Automate secret rotation.  
 
-#### [AWS Directory Services]()
+#### [AWS STS](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20STS.md) - Temporary credentials for an IAM user that needs permisions of a differnt role for a short time.
+
+#### [AWS Directory Services](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Directory%20Services.md) - Active Directory DCs in AWS. Extended current AD. Build AWS AD. Manage access for AD users to services & resources. 
