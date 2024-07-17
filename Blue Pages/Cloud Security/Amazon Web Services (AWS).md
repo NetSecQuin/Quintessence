@@ -15,7 +15,7 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 - Disastor recovery backups may need to be stored at a different data center.
 - Some regions do not offer all AWS services
 
-AWS also has *Edge Data Centers*, which are in 310* different locations than Availability Zones. As access to certain data increases with time, this data is copied to an *edge* location near your customer base for better performance and latency. These centers are used for end-user routing and caching use-cases primarily. 
+AWS also has *Edge Data Centers*, which are in 310* different locations than Availability Zones. As access to certain data increases with time, this data is copied to an *edge* location near your customer base for better performance and latency. These centers are used for end-user routing and caching on public web application use-cases primarily (CDNs, DNS, Shield). 
 
 ## Categories
 
