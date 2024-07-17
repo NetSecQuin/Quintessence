@@ -59,7 +59,7 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS CloudFormation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20CloudFormation.md) - Infrastructure as code through creating and deploying templated configurations into CI/CD pipeline. 
 
-[AWS Inspector](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services) - Vulnerability scanning of instances, containers, and Lambda functions directly integrated into the CI/CD pipeline. 
+[AWS Inspector](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Inspector.md) - Vulnerability scanning of instances, containers, and Lambda functions directly integrated into the CI/CD pipeline. 
 
 
 [CloudTrail](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20CloudTrail.md) - Every action in an AWS account is an API call. All AWS API calls are documented in CloudTrail. 
