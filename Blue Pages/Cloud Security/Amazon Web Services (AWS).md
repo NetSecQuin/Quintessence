@@ -2,7 +2,7 @@
 
 ## AWS Certifications
 
-#### [AWS Certified Security - Specialty SCS-C02](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Certified%20Security%20-%20Specialty%20SCS-C02.md)
+#### [AWS Certified Security - Specialty SCS-C02](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Certified%20Security%20-%20Specialty%20SCS-C02.md)
 
 ## Regions and Availability Zones
 
@@ -19,17 +19,17 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 ## Categories
 
-#### [AWS Logging, Monitoring, and Alerting](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Logging%2C%20Monitoring%2C%20and%20Alerting.md)
+#### [AWS Logging, Monitoring, and Alerting](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Logging%2C%20Monitoring%2C%20and%20Alerting.md)
 
-#### [Identify Access Managment (IAM)](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/Identity%20%26%20Access%20Management%20(IAM).md)
+#### [Identify Access Managment (IAM)](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/Identity%20&%20Access%20Management%20(IAM).md)
 
-#### [Infrastructure Protection](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Infrastructure%20Protection.md)
+#### [Infrastructure Protection](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Infrastructure%20Protection.md)
 
-#### [Data Protection](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Data%20Protection.md)
+#### [Data Protection](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Data%20Protection.md)
 
-#### [Incident Response](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Incident%20Response.md)
+#### [Incident Response](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Incident%20Response.md)
 
-#### [DDoS Mitigation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20DDoS%20Mitigation.md)
+#### [DDoS Mitigation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20DDoS%20Mitigation.md)
 
 ## All Services
 
