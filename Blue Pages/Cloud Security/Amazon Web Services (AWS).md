@@ -27,6 +27,8 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 
 #### [Incident Response](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Incident%20Response.md)
 
+#### [DDoS Mitigation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20DDoS%20Mitigation.md)
+
 ## All Services
 
 #### [AWS Artificat](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services)
@@ -84,6 +86,9 @@ Choosing a **Region** and **Availibility Zone** is a big choice as there are cer
 
 [AWS Macie](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Macie.md) - Scan S3 for sensitve data with ML. Identify unencrypted data and insecure bucket policies. 
 
+[AWS Step Functions](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Step%20Functions.md) - Create automated workflows where the output of one Lambda function can be pushed into a new Lambda function. 
+
+[AWS EBS](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20EBS.md) -  Virtual HDD/SSD storage for attaching to your EC2 instances. 
 
 
 
