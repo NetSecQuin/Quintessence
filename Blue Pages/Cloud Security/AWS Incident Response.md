@@ -1,8 +1,20 @@
 # AWS Incident Response
 
+
+## Services
+
+[AWS Step Functions](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Step%20Functions.md) - Create automated workflows where the output of one Lambda function can be pushed into a new Lambda function. 
+
+[AWS EBS](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20EBS.md) -  Virtual HDD/SSD storage for attaching to your EC2 instances. 
+
+[AWS CloudFormation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20CloudFormation.md) - Infrastructure as code through creating and deploying templated configurations into CI/CD pipeline. 
+
 ## Investigation Requirements
 
-
+- Collect evidence (snapshots, metadata, logs, etc.) without compromising integrity of the data
+- Isolate instances to prevent additional compromise or lateral movement.
+- Create a clean and isolated forensics investigation enviornment with the necessary tools to conduct analysis
+- Investigate hosts through incident response plan. Use automation where possible. 
 
 ## Implement Automation Where Possible
 
@@ -22,4 +34,4 @@ In the following example we see AWS Step Functions being used to automate an inc
 ![](https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721239200/ZEcL0bTnPYhQOsOBxow55Q/tincan/1795780_1704469401_o_1hjd4l7tc11hedc913i09dklbhj_zip/assets/b2g1V-jZnvmX4qOA_sYgTi6A_iBfSMOkW.png)
 
 
-## Services
+
