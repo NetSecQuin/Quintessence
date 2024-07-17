@@ -9,7 +9,7 @@ To learn more, see [AWS WAF](https://aws.amazon.com/waf/).
 
 ## Use
 
-- Manage and control which traffic is allowed to a web application through granular signature detection
+- Manage and control which traffic is allowed to a web application through conditional signature detection
 
 
 ![](https://d1.awsstatic.com/Product-Page-Diagram_AWS-Web-Application-Firewall%402x.5f24d1b519ed1a88b7278c5d4cf7e4eeaf9b75cf.png)
