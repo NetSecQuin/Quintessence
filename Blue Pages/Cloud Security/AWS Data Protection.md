@@ -27,3 +27,8 @@ While data is being uploaded or moved, it also may need to be encrypted in order
 [AWS Macie](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Macie.md) - Scan S3 for sensitve data with ML. Identify unencrypted data and insecure bucket policies. 
 
 
+## Extra notes
+
+- In Server-Side Encryption in S3 (SSE-S3) AWS S3 generates and manages encryption keys. 
+
+
