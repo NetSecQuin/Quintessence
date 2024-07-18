@@ -60,5 +60,31 @@ Click the dropdown where your username is and click ```Switch role```.
 Then enter the AccountID of the newly joined *Member* account, and the name of the newly created Role. Pick a nickname and color for the role, that will make it easier to identify when switching into it. 
  
 
+## Service Control Policies (SCPs)
+Service Control Polcies are account permission boundries that limit what an AWS Account (including account root user) can do. 
+  - Despite a Account root user have full account control, SCPs limit what an account can do itself.
+    - Common SCPs could be to limit regions available in accounts, or limit the size of EC2 instance that can be created in accounts.   
 
-   
+
+- Management account can not be restricted by service control policies (SCPs)
+- Service Control Policies **do not grant any permissions**, they strictly limit permissions/capabilities.
+- By default everything is Allowed, through the defualt/primary SCP policy *'FullAWSAccess'*. therefore it is an explicit deny list.
+  - If you want SCP to act as an Allow list, you would delete the *'FullAWSAccess'* policy and build Allow policies. (More secure, but more admin overhead and more likely cause issues.)
+ 
+To Enable Service Control Policies (SCP): ```AWS Organizations > Policies > Service Control Policies > Enable```
+- This will enable and create the *'FullAWSAccess'* SCP policy.
+
+To Create a new Service Control Policy: ```AWS Organizations > Policies Service Control Policies > Create New > Enter configuration```
+- Just like IAM policies, SCP policies opperate in an upside down christmas tree approach. If the first policy statement in a single SCP shows allow all access to everything, and the second statement says to block S3, everything will be accessible except S3.
+
+In order to add an SCP to an OU, click on the OU under AWS Organizations, scroll down to policies, and click attach policy. Remove policies the same way. Keep things tidy by creating policies that encompas the prior permission blocks, and detach repetitive or former SCPs. 
+ 
+### Creating Organizational Units (OUs)
+**Note: AWS Organizations are hierachical, which means that nested OUs carry the SCPs of their parent OU.** 
+
+- 1.) In the *Management* Account, go to **AWS Organizations**. 
+- 2.) Click the checkbox next to the parent OU you would like to create a new one under. If it is your first OU, this will be 'Root'. 
+- 3.) Select: Actions > Organizational Units > Create New. Then give the OU a name. 
+- 4.) **Move** and AWS Account into the new OU with:  ``` Actions > AWS Account > Move ``` 
+
+
