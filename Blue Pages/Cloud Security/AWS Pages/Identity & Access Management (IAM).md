@@ -24,3 +24,5 @@
 [AWS Directory Services](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Directory%20Services.md) - Active Directory DCs in AWS. Extended current AD. Build AWS AD. Manage access for AD users to services & resources. 
 
 [AWS Cognito](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Cognito.md) - Add/Manage your website's user accounts. Give those users access to credentials that can utalize AWS services. 
+
+[AWS Control Tower](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Control%20Tower.md) - OVERVIEW TO BE ADDED 
