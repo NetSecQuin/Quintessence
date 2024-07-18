@@ -37,13 +37,18 @@ Using an AWS Organization changes what is best practice for how you manage users
 - Some prefer to keep the managemnet account clean (Like your AWS root account would be) and have a secondary account that is dedicated to handle logins.
   - From one central user account, we can use a feature called *Role-Switch*, which allows us assume roles in the other accounts.
     - If you are creating a new AWS account in your organization, the role will automatically be created for you to *Role-Switch* into.
+      - Creating a new AWS account an organization is as simple as providing an email address and assume role name. No root password needed. 
     - If you are inviting a current AWS account to your organization, the Management account will need a role created to *Role-Switch* into.
       - **This role will be created in the newly joined account**, providing access to the Management account with the **'AdministratorAccess'** policy.  
       - ``` IAM > Roles > Create Role > Trusted Entity type = AWS Account > Another AWS Account = AccountID of Management Account ```
       - You will need to name the role. AWS syntax suggests using **"OrganizationAccountAccessRole"** as the newly created role name.
      
 ### Assuming a role
-From the newly joined member account, once you have accepted the invitation and created a new role that provides the *Management account* with AdministrativeAccess policy
+Once you have accepted the invitation and created a new role that provides the *Management account* with AdministrativeAccess policy from the newly joined member account, you can switch back to the *Management* account to assume a role.
+
+Click the dropdown where your username is and click ```Switch role```. 
+
+Then enter the AccountID of the newly joined *Member* account, and the name of the newly created Role. Pick a nickname and color for the role, that will make it easier to identify when switching into it. 
  
 
 
