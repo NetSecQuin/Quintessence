@@ -36,12 +36,21 @@ Using an AWS Organization changes what is best practice for how you manage users
 - Some organizations may use an exsisting seperate Identity provider with Identity Federation
 - Some prefer to keep the managemnet account clean (Like your AWS root account would be) and have a secondary account that is dedicated to handle logins.
   - From one central user account, we can use a feature called *Role-Switch*, which allows us assume roles in the other accounts.
-    - If you are creating a new AWS account in your organization, the role will automatically be created for you to *Role-Switch* into.
-      - Creating a new AWS account an organization is as simple as providing an email address and assume role name. No root password needed. 
-    - If you are inviting a current AWS account to your organization, the Management account will need a role created to *Role-Switch* into.
-      - **This role will be created in the newly joined account**, providing access to the Management account with the **'AdministratorAccess'** policy.  
-      - ``` IAM > Roles > Create Role > Trusted Entity type = AWS Account > Another AWS Account = AccountID of Management Account ```
-      - You will need to name the role. AWS syntax suggests using **"OrganizationAccountAccessRole"** as the newly created role name.
+
+#### Adding Members to your Organization
+Once you have clicked AWS Organizations > Create Organization, your account will be converted from a *Standard* account to a *Management* account. 
+
+**Creating an Account**
+
+- If you are creating a new AWS account in your organization, the role will automatically be created for you to *Role-Switch* into.
+  - Creating a new AWS account an organization is as simple as providing an email address and assume role name. No root password needed. 
+
+**Inviting an Exsisting Account**
+
+- If you are inviting a current AWS account to your organization, the Management account will need a role created to *Role-Switch* into.
+   - **This role will be created in the newly joined account**, providing access to the Management account with the **'AdministratorAccess'** policy.  
+   - ``` IAM > Roles > Create Role > Trusted Entity type = AWS Account > Another AWS Account = AccountID of Management Account ```
+   - You will need to name the role. AWS syntax suggests using **"OrganizationAccountAccessRole"** as the newly created role name.
      
 ### Assuming a role
 Once you have accepted the invitation and created a new role that provides the *Management account* with AdministrativeAccess policy from the newly joined member account, you can switch back to the *Management* account to assume a role.
