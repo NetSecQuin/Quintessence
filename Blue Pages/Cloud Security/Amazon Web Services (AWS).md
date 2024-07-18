@@ -19,6 +19,8 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 ## Categories
 
+#### [Account Creation]()
+
 #### [AWS Logging, Monitoring, and Alerting](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Logging%2C%20Monitoring%2C%20and%20Alerting.md)
 
 #### [Identify Access Managment (IAM)](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/Identity%20&%20Access%20Management%20(IAM).md)
@@ -35,7 +37,7 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS Artificat](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services)
 
-[AWS IAM](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20IAM.md) - Manage Crendential policies and IAM Resources (Groups, Users, Roles, Policies(Permissions), and Identity Providers)
+#### AWS IAM - Manage Crendential policies and IAM Resources (Groups, Users, Roles, Policies(Permissions), and Identity Providers)
 
 [AWS Identity IAM Center](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Identity%20IAM%20Center.md) - Configure SSO or SAML from your organizations LDAP (Active Directory) with AWS IAM. 
 
