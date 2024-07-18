@@ -12,5 +12,5 @@ Information to help build a foundation of knowledge across numerous IT related d
 
 [Containers & Virtualization]() - Coming soon
 
-[Cloud] - Coming soon
+[Cloud]() - Coming soon
 
