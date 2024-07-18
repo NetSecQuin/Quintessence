@@ -104,6 +104,8 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS Well-Architected Tool](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Well-Architected%20Tool.md) - Self-Service questionaire that will ask you questions in order to identify places to improve your workload. 
 
+[AWS Control Tower](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Control%20Tower.md) - OVERVIEW TO BE ADDED 
+
 ## To Be Added or Deleted. 
 
 #### [Lambda]()
