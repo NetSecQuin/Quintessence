@@ -14,6 +14,8 @@ To learn more, see [AWS CloudFormation](https://aws.amazon.com/cloudformation/).
 - Infrastructure as Code
 
 
+
+
 ## Physical & Logic Resources
 
 CloudFormation Templates are YAML or JSON and contain logical resources (the "WHAT")
@@ -56,6 +58,35 @@ Psuedo Parameters are defined in a CLoudFormation template but unlike template p
 - Psuedo Parameters follow the syntax of ```AWS::FIELD```
 
 For example, if you were to run a stack in *us-east-1* with the psuedo parameter `AWS::Region`, AWS would fill the region parameter with the region the stack is being run. Other examples could be **AWS::StackName**, **AWS::StackId**, or **AWS::AccountID**. 
+
+## Mappings
+
+Mappings can contain a number of key to value pairs that allow for lookups within an template. They are used to improve template portability. The Mappings template shows a variety of options then mappings use the !FindInMap Intrinsic function in order to lookup the value inside a mapping. 
+
+An Example Mapping would be 
+
+```
+Mappings:
+  RegionMap:
+    us-east-1:
+      HVM64: "ami-0932eh921383s"
+      HVMG2: "ami-0932js832kds9"
+   us-west1:
+      HVM64: "ami-0723dsjf83kws1"
+      HVMG2: "ami-08232dsi219323"
+   eu-east-1:
+      HVM64: "ami-9328sfad234231a"
+      HVMG2: "ami-28193sjkri9810p"
+```
+
+They can contain either one key, or top and second level keys. In the following Mapping we have a toplevel and a secondlevel key. 
+The Syntax for a "!FindInMap function is:
+
+``` !FindInMap [ MapName, TopLevelKey, SecondLevelKey ] ```
+
+Where in this example, we are Mapping to the `MapName` "RegionMap". The `TopLevelKey` we are pulling from the AWS region the template was launched in, and the `SecondLevelKey` "HVM64".
+
+``` !FindInMap ["RegionMap", !Ref 'AWS::Region', "HVM64" ] ```
 
 
 
@@ -115,6 +146,9 @@ Subnet2:
 ```
 #### `Fn:ImportValue`
 #### `Fn::FindInMap`
+
+Review the ["Mappings" section above.](#Mappings)
+
 #### `Fn::Transform`
 
 
