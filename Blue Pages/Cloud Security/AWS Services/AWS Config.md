@@ -4,7 +4,17 @@
 
 ## Summary
 
-AWS Config is a continuous monitoring and assessment service that can help you detect non-compliance configurations in near real time. You can view the current and historic configurations of a resource and use this information to troubleshoot outages and conduct security attack analyses.
+AWS Config is a continuous monitoring and assessment service that can help you detect non-compliance configurations in near real time. You can view the current and historic configurations of a resource and use this information to troubleshoot outages and conduct security attack analyses. AWS Config is a regional service, but can support cross-region and account aggregation.
+
+
+AWS Config has two main jobs:
+1.) Record Configration changes over time on resources. (Tracks pre-change and post changes for auditing changes against compliance.)
+  - It **Does not prevent changes from happening**. BUT can be used to auto-remediate changes. 
+  - Changes can generate SNS notification and near-realtime events via **EventBridge** & **Lambda**
+2.) Evaluating configuration against predefined config rules in order to identify *compliant* or *Non-Compliant* with **Config Rules**
+  - Are either AWS Managed or Custom (using lambda).
+  - AWS Config can send events to Eventbridge. Eventbridge can use Lambda for auto-fixing Account level changes, and SSM for host level auto-fixing.
+
 
 To learn more, see [AWS Config](https://aws.amazon.com/config/).
 
