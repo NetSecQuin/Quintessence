@@ -1,5 +1,5 @@
 # AWS CloudFormation
-["Mappings" section above.](##Mappings)
+
 ![](https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721163600/qQMAeir7CedYq2w0pM_zlw/tincan/1795780_1704469401_o_1hjd4l7tc11hedc913i09dklbhj_zip/assets/0ufBj0fY2GkHj2Sf_xbRG36IUQ7YDUiQP.png)
 
 ## Summary
@@ -87,6 +87,22 @@ The Syntax for a "!FindInMap function is:
 Where in this example, we are Mapping to the `MapName` "RegionMap". The `TopLevelKey` we are pulling from the AWS region the template was launched in, and the `SecondLevelKey` "HVM64".
 
 ``` !FindInMap ["RegionMap", !Ref 'AWS::Region', "HVM64" ] ```
+
+## Outputs
+
+Optional within a template, not many have them, but sometimes useful. Allows you to declare outputs in the CLI, Console, and accesible from a parent stack when nesting. 
+
+Example output: would output a description string and the value. 
+
+```
+Outputs:
+  WordpressURL:
+    Description: "Instance WebURL"
+    Value: !Join [ '', [ 'https://', !GetAtt Instance.DNSname ] ]
+```
+    
+
+
 
 
 
