@@ -8,7 +8,6 @@ AWS CloudFormation automates and streamlines the task of repeatedly creating and
 
 To learn more, see [AWS CloudFormation](https://aws.amazon.com/cloudformation/).
 
-[DependsOn](#DependsOn)
 
 ## Use
 
@@ -20,6 +19,18 @@ Typical CloudFormation flow
 - Template > Stack > Physical Resource (Create)
 - Stack (Delete) > (Delete) Physical Resource
 - v2 Template > Existing Stack > Resources Changed
+
+
+
+# Table of Contents
+
+
+[## Physical & Logic Resources](#Physical & Logic Resources)
+[DependsOn](#DependsOn)
+
+
+
+
 
 
 ## Physical & Logic Resources
