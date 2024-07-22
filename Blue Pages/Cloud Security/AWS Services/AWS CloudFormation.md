@@ -122,19 +122,76 @@ Instance:
     AvailabilityZone: !Select [ 0, !GetAZs ''] # Get AZs and Select Function
 ```
 
+
+
 #### `Ref` & `Fn::GetATT` - Reference a value from a logical resource or parameter in another Cloudformation Template. (Template1 makes a VPC, template 2 references VPC name in Template1)
   - Whenever an action is prefrormed a value is returned. For instance when creating an EC2 with a logical resource, an instanceID is returned. When you want to reference the returned value, we use `!Ref Instance`.
   - Additionally there may be sub-attributes associated with the returned value. When the same EC2 instance is created, in addition to the resourceID, we also get additional details about the instance (PublicIP, DNSname, etc.) These values can be retrieved with `Fn:: !GetAtt LogicalResource.Attribute`
+
+
+
 
 #### `Fn::Join` & `Fn:Split` - Join strings together or split them up. (If you create a EC2 with an IPv4 address, you could use join to add the IP to a url)
   - `!Split` lets us take in a single string and split it into a series of list values. For example if we have `!Split ["|" , "hippy|dippy|doopy|daa"]` the output list would be `["hippy", "dippy", "doopy", "daa"]` as it was deliminitated by `|`
   - `!join` concats a list into a single string value. `!Join [ '', [ 'https://', !GetAtt Instance.DNSname ] ]`
 
+
+
+
 #### `Fn:GetAZs` & `Fn::Select` - Get a list of AZs in a region. Select an item in a list. (Get a list of AZs, select an AZ from the list)
  - Commonly used together, but 'select' will select an option from a retrieved list of results. For example if we want to get the availibility zones thare are availabile in a region, we may use `!GetAZs "us-east-1"` or `!GetAZs ""` (current region). This will return a list of all AZs in that region.
  - Next we will want to select an AZ and have its value returned to the logical reference. This can be down with `!Select [ 0, !GetAZs '' ]` which will choose the first item in the returned list.
 
+
+
+
+
 #### Conditions: `Fn::IF, AND, Equals, Not & Or` - Provision resources based on a condition (IF a certain parameter is set to prod, provision *big* instances)
+
+- Created in an optional *'Conditions'* section of the template. Conditional are either True or False and are processed before resources are created, in order to control whether a logical resources is created or not. They can use AND, EQUALS, IF, NOT, and OR. 
+
+- Example conditions could be how many AZs to create in a resource, or what size of EC2 instance should be created within the stack, dependant on a prior condition*. 
+
+A conditional statement is built of up being in three locations. 
+
+1.) In the parameters section, there multiple options available. This could be through either *Templated Parameters* or *Psuedo Parameters*. The below example uses Templated Parameters, specifically 'AllowedValues'.
+
+```
+Parameters:
+  EnvType:
+    Default: 'dev'
+    Type; String
+    AllowedValues:
+      - 'dev'
+      - 'prod'
+```
+
+2.) The Conditions block, where we have the conditional statement and the condition name. Below we have the condition 'IsProd' which compares itself to/equals the `!Ref Envtype`
+
+```
+Conditions:
+  IsProd: !Equals
+    - !Ref EnvType
+    - 'prod'
+```
+
+3.) Next in the template defining the logical resource, we have two logical resources listed. The first is the default, the second contains the conditional statement `IsProd`. If the IsProd condition has been met, the second resource value will be chosen. 
+
+```
+Resource:
+  Wordpress:
+    Type: 'AWS::EC2:Instance'
+    Properties:
+      ImageID: 'ami-323i3ew239'
+   WordpressProd:
+    Type: 'AWS::EC2:Instance'
+Condition: IsProd
+    Properties:
+      ImageID: 'ami-323i3ew239'
+```
+
+
+
 
 #### `Fn::Base64` & `Fn::Sub` - Accepts non-encoded text and outputs Bases64. Substitute things within text based on runtime information
   - Used for when the external function requires an input of Base64.
