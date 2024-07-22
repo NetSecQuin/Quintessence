@@ -10,7 +10,7 @@ AWS Config is a continuous monitoring and assessment service that can help you d
 AWS Config has two main jobs:
 
 1.) Record Configration changes over time on resources. (Tracks pre-change and post changes for auditing changes against compliance.)
-  - It **Does not prevent changes from happening**. BUT can be used to auto-remediate changes. 
+  - It **does not prevent changes from happening**. BUT can be used to auto-remediate changes. 
   - Changes can generate SNS notification and near-realtime events via **EventBridge** & **Lambda**
 
 2.) Evaluating configuration against predefined config rules in order to identify *compliant* or *Non-Compliant* with **Config Rules**
