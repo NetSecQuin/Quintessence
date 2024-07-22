@@ -147,7 +147,7 @@ Subnet2:
 #### `Fn:ImportValue`
 #### `Fn::FindInMap`
 
-Review the ["Mappings" section above.](##Mappings)
+Review the ["Mappings" section above.](!##Mappings)
 
 #### `Fn::Transform`
 
