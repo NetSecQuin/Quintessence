@@ -25,7 +25,7 @@ Typical CloudFormation flow
 # Table of Contents
 
 
-[Physical & Logic Resources](#Physical_&_Logic_Resources)
+[Physical & Logic Resources](#Physical & Logic Resources)
 
 [DependsOn](#DependsOn)
 
