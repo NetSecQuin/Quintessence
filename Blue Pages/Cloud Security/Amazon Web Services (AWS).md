@@ -19,7 +19,7 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 ## Categories
 
-#### [Account Creation]()
+#### [Account Creation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Account%20Creation.md)
 
 #### [AWS Logging, Monitoring, and Alerting](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Logging%2C%20Monitoring%2C%20and%20Alerting.md)
 
