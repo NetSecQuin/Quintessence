@@ -108,6 +108,8 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS Service Catalog](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Service%20Catalog.md) - A self-service catalog for end-users to *purchase** and launch predefined CloudFormation templates. 
 
+[AWS Resource Access Manager](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Resource%20Access%20Manager%20(RAM).md) - Allows for sharing resources accross AWS accounts and ORGs. 
+
 ## To Be Added or Deleted. 
 
 #### [Lambda]()
