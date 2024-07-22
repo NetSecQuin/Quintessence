@@ -189,6 +189,20 @@ A *Change Set* let you preview changes.
  - Create a change set is an option in the stack. Using this instead of just simply overwritting it will show additional information about the change prior to taking action. 
 
 
+## Custom Resources
+
+CloudFormation **doesn't support everything**. Custom Resources let Cloudformation integrate with anything it doesnt natively support currently. 
+- CloudFormation can pass data to something, and get data back from something. With the use of Lambda functions and response URLs (used for task completion verification).
+- Since the custom resource was configured through CloudFormation, upon deletion of the stack the custom Lambda resource will also cleanup itself.
+
+Ex. 
+
+w/o Custom Resource
+- If we have Cloudformation template that creates an S3 and a user manually adds files to it after completion, upon deletion of the stack, the operation will *fail* as it will encounter an issue with the bucket not being empty. 
+
+
+with Custom Resource
+- If we have a cloudformation template that creates and S3 bucket, and uses a Lambda custom resources to add files to the bucket. Then a user manually adds more files to the bucket. When the stack is deleted, Cloudformation will use the reverse of the lambda function and delete all resources in the bucket. It then will delete the S3 bucket. Causing no error. 
 
 
 
