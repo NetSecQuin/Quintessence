@@ -103,6 +103,39 @@ Outputs:
     
 
 
+## DependsOn
+
+When CloudFormation creates, updates or deletes resources it tries to do it in parrelel (Do as many tasks at a time). However there are times where one action needs to be taken before another, or a resource relies on the prior creation and/or configuration of another resource. 
+
+There are two ways that CloudFormation accomplishes an order of operations.
+
+1.) Intrinsically. By default, it will automatically identify templates that refrence other resources and ensure that they are built prior. 
+
+2.) `DependsOn` statement. With this statement we are explicitly telling CloudFormation that something needs to be done first. This is required in some use-cases where the CloudFormation template does not reference a value from another resource, but the resource still needs to exsist in order to accomplish the task. 
+
+An Example could be creating an Elastic IP (EIP), as it requires an Internet Gateway (IGW) attatched to a VPC in order to work. 
+
+```
+wPEIP:
+  Type: AWS::EC2::EIP
+  DependsOn: InternetGatewayAttachement #A resource mentioned prior
+  Properties:
+    InstanceId: !Ref WordpressEC2
+```
+
+## Wait Condition, Creation Policy, and cfn-signal
+When a CloudFormation template is completed, it recieves a notification back notifying it as *Create-Completed*. Although, this may be accurate for some processes, it does not cover the entire completion process. 
+
+Example: A template creates an EC2 instances, and installs software for hosting a web application. The Create-Complete notification would alert you to the fact that the EC2 instance completed being built, but it does not say anything about the processes that took place on the EC2. This is because CloudFormation is only waiting on an AWS signal for completion, and AWS EC2 will not be able to signal regarding things happening inside the instance. Therefore:
+
+- cfn-signal: Is installed on the EC2 instance and can be used for sending signals back to the AWS Console. It can send either success or failure signals.
+
+- Creation Policy: Are used to wait for a series of signals from cfn-signal. It can have a timeout defined, as well as a count of success signals. If a failure signal is recieved, the task will show failed. Creation Policies are most commonly used for EC2 instances and Auto-scaling to verify that all parts of the CloudFormation template passed successfully. 
+
+- Wait Conditions: A WaitCondition is a similar function that can wait for specific data to be returned from the instance before continuing onto another action. Wait Conditions are used to retireve the aditional details of a signal and its response. For instance if there is a failure, we can use !GetAtt WaitCondition.Data to access the data of the received signal and see what caused the data. Once we pull this into an Attribute, you could also then configure automated remediation for certain failure reason (ex. a certificate needs to uploaded error)
+
+
+## Nested Stack
 
 
 
