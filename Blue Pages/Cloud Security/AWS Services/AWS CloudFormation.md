@@ -13,7 +13,11 @@ To learn more, see [AWS CloudFormation](https://aws.amazon.com/cloudformation/).
 - Create and deploy infrastructure templates for CI/CD automations.
 - Infrastructure as Code
 
+Typical CloudFormation flow
 
+- Template > Stack > Physical Resource (Create)
+- Stack (Delete) > (Delete) Physical Resource
+- v2 Template > Existing Stack > Resources Changed
 
 
 ## Physical & Logic Resources
@@ -136,6 +140,55 @@ Example: A template creates an EC2 instances, and installs software for hosting 
 
 
 ## Nested Stack
+
+Nested Stacks allow you to reuse CloudFormation Templates for creating isolated and self contained resources. 
+
+- Used for overcoming the 500 resource limit of one stack
+- Modular templates (code reuse) or using lots of potable templates
+- Make the installation process easier when everything is lifecycle linked
+  - If everything is installed to be used together, work together, until it is deleted together.
+
+## Cross Stack References
+
+Cross Stack References allow you to reuse resorces inside a stack, and share the resources between other stacks.
+- Useful for when you want to have a shared VPC 
+- Works by outputing inforamtion and resource values, then exporting them, and referencing resources from the export with `!ImportValue SharedVPCID`.
+- Service-Oriented & Different Lifecycles & STACK Reuse
+
+## DeletionPolicy
+
+If you delete a logical resource from a template or delete a stack in general, the resulting action will be to delete the associated physical resource as well. 
+
+Although the default is to delete, you can define on a per resource basis what action will be taken. 
+- Delete (Default), Retain, or (if supported) Snapshot
+  - Snapshot only works on: EBS Volume, ElastiCache, Neptune, RDS, and Redshift.
+    - Snapshots will continue past Stack lifetime therefore it is necessary to clean them up after they are no longer needed or they will cost $$ 
+
+
+
+## Stack Roles
+
+By default CloudFormation uses the permissions of the user creating the stack. Therefore the user account interacting with CloudFormation needs to have permissions to create and manage all of the resources involved in the CloudFormation Template and the services in the stack. 
+
+CloudFormation can *assume a role* to gain the permissions. Allowing you to implement role seperation in your enviornemnt, and have the identity creating the stack not have resource permissions, just the ability to pass the role into CloudFormation (PassRole).
+- This means that the role will be attached to the stack and used for any operations
+
+In this scenario, an AWS admin would create a role that has the permisions to create, update, and delete AWS resources. Then give a user, the permission to Create, update, or delete stacks, **& to pass in a role**. This way the admin, may not even have the permissions to Stack, and the user will not need the permissions to manipulate any resources. 
+
+
+
+## Change Sets
+
+When you make a change to a CloudFormation template you can expect the typical/default flow of:
+
+v2 Template > Existing Stack > Resources Changes
+
+This can cause either *no interuption*, *some interuption* (EC2 Reboot = some downtime), or *replacement* (Possible data loss) 
+
+A *Change Set* let you preview changes. 
+ - Create a change set is an option in the stack. Using this instead of just simply overwritting it will show additional information about the change prior to taking action. 
+
+
 
 
 
