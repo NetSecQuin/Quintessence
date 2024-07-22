@@ -106,6 +106,8 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS Control Tower](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Control%20Tower.md) - Allows for easy config and setup of multi-account enviornments with the Landing Zone, Guard Rails, Account Factory, and the Dashboard. 
 
+[AWS Service Catalog](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Service%20Catalog.md) - A self-service catalog for end-users to *purchase** and launch predefined CloudFormation templates. 
+
 ## To Be Added or Deleted. 
 
 #### [Lambda]()
