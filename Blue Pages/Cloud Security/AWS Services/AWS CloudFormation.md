@@ -29,7 +29,7 @@ Typical CloudFormation flow
 
 [Template Parameters & Psuedo Parameters](#Template-Parameters-&-Psuedo-Parameters)
 
-[#Mappings](#Mappings)
+[Mappings](#Mappings)
 
 [DependsOn](#DependsOn)
 
