@@ -356,7 +356,12 @@ Subnet2:
     VpcId: !Ref VPC
 ```
 #### `Fn:ImportValue`
+!ImportValue is used for importing a value from an Exported Output of another stack. 
+
+Review [[Cross Stack References](#Cross-Stack-References)
+
 #### `Fn::FindInMap`
+!FindInMap is used when refercing a key stored within a mapping. 
 
 Review the ["Mappings" section above.](##Mappings)
 
