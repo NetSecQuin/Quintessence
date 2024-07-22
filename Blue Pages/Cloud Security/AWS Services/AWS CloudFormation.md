@@ -8,6 +8,8 @@ AWS CloudFormation automates and streamlines the task of repeatedly creating and
 
 To learn more, see [AWS CloudFormation](https://aws.amazon.com/cloudformation/).
 
+[Deletion Policy](#DeletionPolicy]
+
 ## Use
 
 - Create and deploy infrastructure templates for CI/CD automations.
