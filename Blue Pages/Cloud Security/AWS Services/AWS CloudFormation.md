@@ -27,7 +27,7 @@ Typical CloudFormation flow
 
 [Physical & Logic Resources](#Physical & Logic Resources)
 
-[Nested Stack](#Nested_Stack)
+[Nested Stack](#Nested-Stack)
 
 [DependsOn](#DependsOn)
 
