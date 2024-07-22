@@ -8,7 +8,7 @@ AWS CloudFormation automates and streamlines the task of repeatedly creating and
 
 To learn more, see [AWS CloudFormation](https://aws.amazon.com/cloudformation/).
 
-[DependsOn](##DependsOn)
+[DependsOn](#DependsOn)
 
 ## Use
 
