@@ -153,3 +153,45 @@ Service-Linked roles are IAM roles linked to a specific service, and its permiss
 
 Passrole permissions allows a user who does not have a full set of permissions, to pass a role into a service that has the necessary permissions. For example, When a end-user is using a CloudFormation template to create an EC2 instance, but does not have the permissions to create an EC2 instance themselves, they can pass CloudFormation a role that has the permissions to fufil the Stack operation and create the physical resources. 
 
+
+## EC2 Instance Roles
+
+A role that allows the EC2 service to assume the role. 
+
+In order for the roles credentals to be delieved to the inside of an EC2 instance (so things running in the EC2 can use the role), an instance profile is created under the same name as the IAM role. (IF created in the console UI, this occurs automatically, but if through CLi or CloudFormation, you must create the instance profile manually/seperately.)
+Credentials are then delievered to the EC2 instance through the instance meta-data. Additionally EC2 and STS work with eachother when using EC2 instance roles, consitantly checking the metadata, and renewing/rotating temporary credentials before they expire.
+
+
+## Policy Variables
+
+Policy varaibles allow you to add varaibles to IAM policies which match enviornment, account or resource attributes. 
+
+In this following example, we are assigning access to the user *bob* to access the *user/bob*'s IAM access keys. This can not scale because if we add this policy block to another user (user *jane*), the account *jane* would have access to bob's access keys, not Jane's.
+
+```
+{
+  "Version": "2024-07-23",
+  "Statement": [{
+    "Action": [iam:*AccessKeys*],
+    "Effect": "Allow",
+    "Resource": ["arn:aws:iam::account-id:user/bob"]
+  }]
+}
+```
+
+In the next example, we use Policy variables to pull the username of the user that the policy pertains too. This allows the tempate to be scalable and attached to a group or OU. 
+
+```
+{
+  "Version": "2024-07-23",
+  "Statement": [{
+    "Action": [iam:*AccessKeys*],
+    "Effect": "Allow",
+    "Resource": ["arn:aws:iam::account-id:user/${aws:username}"]
+  }]
+}
+```
+
+Learn more about [Policy Variables](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html)
+
+
