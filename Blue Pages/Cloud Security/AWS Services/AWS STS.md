@@ -11,3 +11,20 @@ For more information, see the [AWS Security Token Service API Reference](https:/
 ## Use
 
 - Temporary credentials for an IAM user that needs permisions of a differnt role for a short time. Temporary elevated credentials for a specific task.
+
+# STS
+
+Generates temporary credentials whenever a role is used (sts:AssumeRole) to access AWS resources. STS is requested by an Idenity (AWS or External). 
+
+Similar to Access Keys, except they expire and do not belong to the identity. 
+
+The Role **Trust Policy** defines who can assume a specific role. Conceptually this is a wall around the IAM Role. The sts:AssumeRole* call must be made by an exsisting identity (either AWS or external(federation)).
+
+If an *identity* is not allowed to assume a role based on the trust policy, *AssumeRole* fails. 
+If the trust policy for a role allows the *idenitity* to use it, the identities **sts:AssumeRole*** call will succeeed. Then STS will read the **Permissions Policy**, which is attached to the role. STS then uses the permissions policy to generate temporary credentials that allow access until *expiration*. The generate STS information will include:
+- AccessKeyId: Unique ID of the credentials
+- Expiration: Data and time of credential expiration
+- SecretAccessKey: Used to sign requests
+- SessionToken: Unique token which must be passed with all requests
+
+When the temporary credentials expire, another sts:AssumeRole* call will be required in order to get new temporary credentials. 
