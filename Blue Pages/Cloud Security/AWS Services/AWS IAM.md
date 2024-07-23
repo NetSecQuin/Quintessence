@@ -16,7 +16,7 @@
 
 ## IAM Users
 
-IAM users are an identity used for anything requiring long-term AWS access (Humans, Applications, and Service Accounts)
+IAM users are an identity used for anything requiring long-term AWS access (Humans, Applications, and Service Accounts) and can be tied to a signle principal (Ex. Single User)
 
 An IAM User is an AWS account which can have policies or permission sets assigned to it. IAM Users can authenticate through the mentioned credential types, but do require each form of authentication. IAM Users can either be given console access or just be given CLI access, therefore it is not required that an IAM User has a password set (authentication through access keys)
 
@@ -107,4 +107,49 @@ This gets more complicated when there are more than one policy that applies, but
 - Inline: Attached and managed at a per identity basis. Used for special or exceptions to the access rights (allows or denys)
 - Managed: Created as their own object and attached to multiple identities. Should be used by default. Reusable & have low management overhead
 
+## IAM Groups
+
+IAM Groups are simply containers for IAM users. 
+
+Groups allow grouping users together and can have policys attached to them (Either Inline or Managed). Users can still have additional policies attached to them 
+
+- Groups can not be nested.
+- You can have up to 300 Groups. 
+
+Trick question: There is no 'all users group' created natively. 
+
+Note:
+- You can not login to an IAM group, they do not have any credentials. 
+- Resources can have policies attached to it, which reference Users and Roles, but Groups are not a true identity, therefore they can *not* be referenced as a principal in a policy.
+
+## IAM Roles
+
+Role is an identity best used by a number of principals that must make use of access. It is best used on a temporary basis. It is not something that represents 'you' (a human), it is a set of permissions/access that can be used by multiple identities and represent a level of access within an AWS account. 
+
+IAM roles are assumed.. You become that role (borrow the permissions for a short period of time)
+
+IAM roles have two types of policies that can be attached
+- Trust Policy: Controls which identities (IAM users, Roles, Services, or even allow anonymous usage or other identities (facebook, twitter, ect.) can *assume* that role.
+- Permission Policy: Controls what access permissions the role has
+  - When an identity *assumes a role*, AWS issues temporary security credentials (similar to time-limited **Access keys**) through AWS STS:AssumeRole.
+
+#### When to use IAM Roles
+If you do not know the number of principals that will be using the access. 
+
+1.) AWS Lambda: By default Lambda does not have any permissions, therefore it needs permissions to run. A *Lambda Execution Role* can be used to provide a lambda function with temporary credentials in order to access AWS resources. 
+  - Without Assuming a role, you would need to hard code credentials into the Lambda function.. which is a no-no.
+
+2.) Break Glass Emergency Roles. User has default access of Read-Only, but in emergencies may need write permissions. A role with write permission may be created and assumable, with extra logging and alerting around its usage to isolate default permissions, but provide additional access in emergencies. 
+
+3.) Adding AWS into ane exsisting enviornment, with exsisting identies (Active Directory). External identies can not be used to directly interact with AWS resources, so by assuming a role, external identities can assume the permissions to access AWS resources. Additionally there is a limit of 5000 identities in AWS, so by using assumed roles we can circumvent this limit. 
+
+4.) You have a web application or mobile app that has millions of users. This application utalizes an AWS service DynamoDB. The app allows users to login with web identities (facebook, google, twitter, etc.), which can then assume a role in order to access DynamoDB resources. This prevents each end-user from needing an AWS account (which would hit the 5000 limit). This also prevents AWS credentials on the app. 
+
+5.) Within AWS Organizations when you need to access a resource or service in a partner/member account. Instead of having every user have a user-account in each AWS account in the organization, we can use roles to allow cross account access. 
+
+#### Service-linked Roles & PassRole
+
+Service-Linked roles are IAM roles linked to a specific service, and its permissions are predefined by the service. It may be created by the service itself, or it may be created during setup of a service usecase. 
+
+Passrole permissions allows a user who does not have a full set of permissions, to pass a role into a service that has the necessary permissions. For example, When a end-user is using a CloudFormation template to create an EC2 instance, but does not have the permissions to create an EC2 instance themselves, they can pass CloudFormation a role that has the permissions to fufil the Stack operation and create the physical resources. 
 
