@@ -24,7 +24,7 @@ Note: There can only be 5,000 IAM Users per account, and IAM user can only be a 
 - IAM Roles & Identity Federation fix this
 
 
-### IAM User Access Keys
+#### IAM User Access Keys
 Access keys allow IAM Users to authenticate through CLI. They are *Long Term Credentials*, they do not change or rotate automatically. 
 
 ```
@@ -40,7 +40,7 @@ Secret Access Key: wkadjiofkwefi/siwefakaf/afdEXAMPLEKEY
 - *IAM Users* are the only identity which uses access keys.
 
 
-### AWS CLI
+#### AWS CLI
 
 To install AWS CLI for your operating system follow [this guide.](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - Once installed, open up your terminal or command line utility and run ```aws --version``` to validate the install was successful. 
@@ -102,7 +102,7 @@ This gets more complicated when there are more than one policy that applies, but
 
 3.) The AWS resource (S3 bucket for example), has an attached IAM policy
 
-### Managed Polcies vs Inline Policies
+#### Managed Polcies vs Inline Policies
 
 - Inline: Attached and managed at a per identity basis. Used for special or exceptions to the access rights (allows or denys)
 - Managed: Created as their own object and attached to multiple identities. Should be used by default. Reusable & have low management overhead
@@ -154,7 +154,7 @@ Service-Linked roles are IAM roles linked to a specific service, and its permiss
 Passrole permissions allows a user who does not have a full set of permissions, to pass a role into a service that has the necessary permissions. For example, When a end-user is using a CloudFormation template to create an EC2 instance, but does not have the permissions to create an EC2 instance themselves, they can pass CloudFormation a role that has the permissions to fufil the Stack operation and create the physical resources. 
 
 
-## EC2 Instance Roles
+#### EC2 Instance Roles
 
 A role that allows the EC2 service to assume the role. 
 
