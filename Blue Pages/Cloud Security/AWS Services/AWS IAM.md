@@ -162,6 +162,80 @@ In order for the roles credentals to be delieved to the inside of an EC2 instanc
 Credentials are then delievered to the EC2 instance through the instance meta-data. Additionally EC2 and STS work with eachother when using EC2 instance roles, consitantly checking the metadata, and renewing/rotating temporary credentials before they expire.
 
 
+
+## IAM Policies
+
+IAM Policies are attached to *identities* and **allow** or **deny** access to take an action. All AWS permissions begin with an implicit Deny, therefore everything is blocked by default unless explicitly allowed. If there is an overlap in the permissions from two statement blocks, an explicit **deny** will always over rule an explicit **allow**. 
+- Ex. 1st policy or statement block allows all S3 access. 2nd blocks write access. > All write access will be blocked. (Does not matter order of the statement blocks, it is not hierarchical.)
+
+#### Statements
+Statements contain a set of permissions (allow or deny) for a single use case. There can be numerous statement blocks within a statement. 
+
+- 1.) Identity how many *Statement* blocks there are. These are identitfied by being contained within `[` `]`, and traditionally will begin with 'Statement". 
+- 2.) Identify what each *Statement* does. Statement blocks are contained within `{` `}`.
+
+#### Statement Blocks
+Statements can contain 1 or more statement blocks. 
+A statement block can contain:
+
+- an `Sid:` : A name or ID for the statement block
+- An `Effect:` : Can be either Allow or Deny.
+- An `Action:` : A list of actions that will be part of the policy. Will be an API action (Ex. S3:PutObject).
+- A `NotAction:` : A list of actions that will **not** be part of the policy. Inverse of Action. (Ex. `NotAction: iam:*` would included all actions *other that* iam.) 
+- A `Resource:` : An ARN associated with a named resource. Whenever evaluating a policy, ensure to identify any wildcards.
+
+**Condition block types**
+- A `Condition:` : An explicitly mapped condition that must be *True* for the condition block to be active.
+  - `StringEquals` & `StringNotEquals`
+  - `StringLike` : Used commonly with `s3:prefix:` to apply access to specific folders within an S3 bucket.
+
+Tips:
+- Best to start with a large allow, then following statement blocks get more granular with *Deny* statements.
+- When looking for overlap in permissions (allow or deny), first look at the resource ARN to see if it matches or overlaps prior statement blocks.
+- If you have a Policy with a single statement that only contains a *deny* (no allow), it will likely be used in conjuncture with another policy
+- Be hyper aware of inverse fields (Ex. `NotAction`, `StringNotEquals`) **BIG EXAM AREA QUESTION**
+- Three actions require the resource to be a wildcard `Resource: "*"`. They are `s3:CreateBucket`, `s3:ListAllMyBuckets`, and `s3:GetBucketLocation`
+
+#### Policy Evaluation Logic
+When AWS is determaining whether access should be **allowed** or **denied**, it goes through the following sets of policies in order to determain what permissions are present:
+
+- 1.) Organization SCPs
+- 2.) Resource Policies
+- 3.) IAM Identity Boundaries
+- 4.) Session Policies
+- 5.) Identity Policies
+
+AWS will look at all policies and check for an *explicit allow* in each policy in the following order. If there is an *explicit allow*, AWS will look continue to look at the following policy. For efficiancy, AWS will look for *explicit denies* in order to go through a limit number of policies. The order of operation is as follows:
+- 1.) Are there any explicit denies?
+- 2.) Are there any SCPs associated with the identity account that would explicitly deny this activity?
+- 3.) Are there any Resource Policies attached to the resource that would explicitly allows this activity?
+- 4.) Are there any Permission Boundaries
+- 5.) Is there a session policy that limits/denies permissions when assuming the IAM role?
+- 6.) Last are there any identity policies that specifically define an explicit allow? If so, access is allowed. 
+
+
+Note: With multiple accounts, there needs to be an **allow** in **both** the account making the request and in the acccount recieving the request. 
+
+#### Permission Boundaries
+
+Permission boundaries apply at the identity level, and allow for limiting permissions beyond an attacked IAM policy. You can create a permission boundary, which acts as a wrapper to the idenitity account, to exclude the possible permissions that an identity can recieve. The most common usecase for permission boundaries is to limit priveledge escalation as you can never create a resource that has greater permissions that the one creating it. 
+
+This works by creating a boundary policy, where all future resources/accounts that the user with original boundary policy, is automatically also applied to everything they create. 
+
+Ex. Administrator creates 'bob' a user account in order to be an IAM administrator. 'bob' the account has a permission boundary attached to it. The permission boundary only allows 'bob' to create new users that also have the same permissions boundary policy attached to it. 
+
+#### Policy Actions
+
+
+
+
+
+
+
+
+
+
+
 ## Policy Variables
 
 Policy varaibles allow you to add varaibles to IAM policies which match enviornment, account or resource attributes. 
