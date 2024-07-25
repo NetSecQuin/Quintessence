@@ -110,6 +110,8 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS Resource Access Manager](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Resource%20Access%20Manager%20(RAM).md) - Allows for sharing resources accross AWS accounts and ORGs. 
 
+[AWS Identity Federation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Identity%20Federation.md) - Allow use of external Identity Providers (IdP) to authenticate to AWS resources
+
 ## To Be Added or Deleted. 
 
 #### [Lambda]()
