@@ -161,7 +161,12 @@ A role that allows the EC2 service to assume the role.
 In order for the roles credentals to be delieved to the inside of an EC2 instance (so things running in the EC2 can use the role), an instance profile is created under the same name as the IAM role. (IF created in the console UI, this occurs automatically, but if through CLi or CloudFormation, you must create the instance profile manually/seperately.)
 Credentials are then delievered to the EC2 instance through the instance meta-data. Additionally EC2 and STS work with eachother when using EC2 instance roles, consitantly checking the metadata, and renewing/rotating temporary credentials before they expire.
 
+#### Exteral ID
 
+Used when connecting to an external service at another company/organization through assume role, to provide additional validation that the requested is who they say they are, since Role ARNs are not private values. 
+
+Works by providing an additional randomly generated ExternalId in order to solve the 'confused deputity' vulneribility/problem. 
+- Confused Deputity: When an AWS account uses a role ARN to request resources from an external organization where the ARN has access, it will be provided. However this leaves a vulnerability where a different AWS account could figure out the role ARN and make requests on their behalf. (Role ARNs are not private values). This can be fixed through requiring an externalID in the request, in addition to the role ARN. 
 
 ## IAM Policies
 
