@@ -26,3 +26,5 @@
 [AWS Cognito](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Cognito.md) - Add/Manage your website's user accounts. Give those users access to credentials that can utalize AWS services. 
 
 [AWS Control Tower](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Control%20Tower.md) - Allows for easy config and setup of multi-account enviornments with the Landing Zone, Guard Rails, Account Factory, and the Dashboard. 
+
+[AWS Identity Federation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Identity%20Federation.md) - Allow use of external Identity Providers (IdP) to authenticate to AWS resources
