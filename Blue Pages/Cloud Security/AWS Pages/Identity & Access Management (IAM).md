@@ -28,3 +28,5 @@
 [AWS Control Tower](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Control%20Tower.md) - Allows for easy config and setup of multi-account enviornments with the Landing Zone, Guard Rails, Account Factory, and the Dashboard. 
 
 [AWS Identity Federation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Identity%20Federation.md) - Allow use of external Identity Providers (IdP) to authenticate to AWS resources
+
+[AWS SAML Federation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20SAML%20Federation.md) - Outdated/Old Way of doing things. Exchange an external SAML based IdP credentials for AWS credentials. 
