@@ -33,6 +33,8 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 #### [DDoS Mitigation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20DDoS%20Mitigation.md)
 
+#### [AWS Projects](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Pages/AWS%20Projects)
+
 ## All Services
 
 [AWS Artificat](https://github.com/NetSecQuin/Quintessence/tree/main/Blue%20Pages/Cloud%20Security/AWS%20Services) - Provides audit & compliance documents for AWS's side of the shared responsibility model.
