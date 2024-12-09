@@ -1,6 +1,71 @@
 # AWS S3
 
 
+### S3 Bucket Policies
+S3 Buckets are private by default.
+
+Utilize a form of resource policies, which are like identity policies but attached to a bucket. 
+
+Identity policies control what that identity can access, resource policys describe who can access that resource. 
+
+Identity polices only control access within an AWS account, but resource policies can control access for same or different accounts. 
+
+Resource Policy Example
+- Statement 1.) Requires MFA for SuperSecret folder
+- Statement 2.) Requires Source IP for access to PhotoAlbum
+```
+{
+  "Version":"2024-12-12",
+  "Statement":[
+    {
+      "Sid":"MFAforsecrets",
+      "Effect":"Allow",
+      "Principal":"*",
+      "Action":["s3:GetObject"],
+      "Resource":["arn:aws:S3:::PhotoAlbum/SuperSecret/*"]
+      "Condition": { "Null": { "aws:MultiFactorAuthAge": true } }
+    },
+    {
+      "Sid":"OnlymyIPs",
+      "Effect":"Allow",
+      "Principal":"*",
+      "Action":["s3:GetObject"],
+      "Resource":["arn:aws:S3:::PhotoAlbum/*"]
+      "Condition": {
+        "OnlyIPAddress": {"aws:SourceIp:" 40.41.42.43/32
+    }
+  ]
+}
+```
+
+### S3 Access Control Lists (ACLs) - LEGACY
+
+Significantly less flexible than a identity policy or resource policy. Only offer READ, WRITE, READ_ACP, WRITE_ACP, FULL_CONTROL, for options with access control. Only allows you to specify permissions for a specific bucket for object, not a colleciton of buckets or objects. Ex. "arn:aws:S3:::PhotoAlbum/October/*.jpg"
+
+
+### Object Versioning
+Object versioning allows you to store multiple versions of an object in a bucket. Ex. 3 files called main.py, where each are different versions of eachother. 
+
+Controled at the bucket level. Once *enabled*, it can never be *disabled*. However it can be *suspended* and re-enabled. 
+
+#### MFA Delete
+Enabled in Versioning configuration, where MFA is required to change bucket versioning state and delete versions. 
+- Need to provide the seriel number of your MFA token and pass it in an API call with the version ID
+
+### S3 Object Lock
+
+Can be enabled on new S3 buckets. Requires AWS Support to enable on exsisting S3 buckets. Once enabled you can not disable. 
+- Write-Once-Read-Many (WORM) - No Delete, No Overwrite
+- Requires object versioning, individual versions are what is 'locked'
+- Two types of Object Lock Retention
+  - Retention Period
+    - Can be "Compliance" or "Governance" mode
+    - Compliance Mode: Retention policy can't be adjusted, deleted, or overwritten, even by root. Retention period must expire before files can be deleted/modified.
+    - Governmance Mode: Rentention policy and lock settings can be adjusted by special permissions
+  - Legal Hold
+    - No retention period
+    - S3:PutObjectLegalHoldStatus = True , enables object lock and prevents overwriting or deleting versions until removed. 
+  - None.
 
 
 ### Presigned URLs
