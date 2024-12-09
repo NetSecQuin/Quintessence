@@ -75,4 +75,15 @@ Presigned URLs can be useful for when a user, who does not have AWS access, need
 Somet things to think about in regards to presigned URL architecture. 
 - When using the URL, the permission match the identity which generated it, therefore:
   - Access denied could mean the generating ID never had access or does not now/on click.
-- Dont generate with a role, URL stops working when temporary credentials expire. Therefore it is meant to be used with a IAM user. 
+- Dont generate with a role, URL stops working when temporary credentials expire. Therefore it is meant to be used with a IAM user.
+
+### Cross Account Access to S3
+
+Access to S3 buckets can be achieved across accounts via *ACLs (Legacy)*, *Bucket/Resource Policies*, and *Assuming Roles*.
+- ACLs will use your Canonical user ID or a legacy identifier, to define access of other AWS account users/roles.
+- Bucket/Resource Policies can specify external account conditions
+- Assuming a role in another AWS account which has access to S3 bucket via identity policy and resource policy.
+
+#### Object Ownership
+
+When dealing with cross account access to S3, there are settings to define whether an objects is owned by the account that added the file to the S3 bucket, or the account that owns the S3 bucket. This can be defined in settings, and can be the cause of some access errors.
