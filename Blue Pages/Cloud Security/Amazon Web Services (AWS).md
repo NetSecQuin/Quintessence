@@ -102,6 +102,8 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS Shield](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Shield.md) - Automatically mitigate certain DDoS attacks through ML signature detection after creating a baseline of normal traffic.
 
+[AWS S3](https://github.com/NetSecQuin/Quintessence/edit/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20S3.md) - Simple Storage Service (S3) is a cloud based storage platorm with some additional features. 
+
 [AWS WAF](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20WAF.md) - Block traffic inbound to your web application based on granular signatures identified in web requests.
 
 [AWS Well-Architected Tool](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Well-Architected%20Tool.md) - Self-Service questionaire that will ask you questions in order to identify places to improve your workload. 
