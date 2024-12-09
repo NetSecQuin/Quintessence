@@ -87,3 +87,4 @@ Access to S3 buckets can be achieved across accounts via *ACLs (Legacy)*, *Bucke
 #### Object Ownership
 
 When dealing with cross account access to S3, there are settings to define whether an objects is owned by the account that added the file to the S3 bucket, or the account that owns the S3 bucket. This can be defined in settings, and can be the cause of some access errors.
+- Because of this, it makes more sense to use Assuming a Role, as it prevents issues where ownership of the bucket and its objects vary. 
