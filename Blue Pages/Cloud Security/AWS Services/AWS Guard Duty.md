@@ -11,7 +11,8 @@ To learn more, see [Amazon GuardDuty](https://aws.amazon.com/guardduty/).
 ## Use
 
 - AWS built in threat detection through intel intel feeds, suspicious anomalie detection, and threat based activity.
-- Center for out of the box malicious activity identification alerting 
+- Center for out of the box malicious activity identification alerting
+- Supports a Master and Member relationship. Where an AWS Organization with a Security account can be the primary account where Guard Duty is enabled and recieve reporting from all AWS accounts. 
 
 ## High level alert types
 
@@ -25,3 +26,5 @@ To learn more, see [Amazon GuardDuty](https://aws.amazon.com/guardduty/).
 - Exfiltration of data over to suspicious/malicious destinations (IP), by Unauthorized users (IP), or unusual mediums (DNS)
 - Hacking operating system types being spun up in the enviornment (Kali, ParotOS, etc.)
 - Priveledge escalation among contarized environments like Docket and Kubernetes (Container escape, role creation/binding, and anomalous IAM user)
+
+## 
