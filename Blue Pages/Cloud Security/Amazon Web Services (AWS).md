@@ -118,6 +118,7 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 [AWS SAML Federation](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20SAML%20Federation.md) - Outdated/Old Way of doing things. Exchange an external SAML based IdP credentials for AWS credentials. 
 
+[AWS Detective](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/AWS%20Detective.md) 
 ## To Be Added or Deleted. 
 
 #### [Lambda]()
