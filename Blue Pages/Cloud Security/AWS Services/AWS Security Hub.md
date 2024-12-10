@@ -11,5 +11,7 @@ To learn more, see [AWS Security Hub](https://aws.amazon.com/security-hub/).
 ## Use
 
 - Centralized view for aggregating, organizing, and taking action on security alerts from multiple AWS Services (GuardDuty, Inspector, and Macie, etc.)
+- Administrator & Member Accounts (not related to ORG mgmt/member). This allows an AWS account in an Organization to be designated as the Security account and be the aggregation point for other AWS accounts and regions.
+- Aggregates data from Partner & AWS Services (Config, Macie, Inspector, GuardDuty, IAM, Firewall Manager, etc.) 
 
 ![](https://d1.awsstatic.com/Digital%20Marketing/House/Hero/products/Security%20Hub/Product-Page-Diagram_AWS-Security-Hub%402x.7e7c0483e9ce1507af2e9214247a1825a27d6bde.png)
