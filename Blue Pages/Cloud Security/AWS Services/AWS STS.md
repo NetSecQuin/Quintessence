@@ -28,3 +28,11 @@ If the trust policy for a role allows the *idenitity* to use it, the identities 
 - SessionToken: Unique token which must be passed with all requests
 
 When the temporary credentials expire, another sts:AssumeRole* call will be required in order to get new temporary credentials. 
+
+## Revoking Temporary Credentials
+The credentails that are created by STS will be set to expire after a specified date and time as mentioned. However, if the account is compromised and we need the credentails to become invalidated immediately we have to get creative. **This is beacuse there is no option to manually invalidate the session. ** 
+
+What we can do is change the permissions of the policy attached to the compromised session to deny access to resources. This will essentially make the stolen assumed-role useless, despite the session still being active till the expiration date/time. 
+
+Unfortunately this will impact any user that is assuming that role, and as roles are meant to be used by multiple users, this could cause productivity loss. In order to get around this, we can create a conditional inline policy to deny any sessions older than a specific date. This essentially forces a new session to be created for users. 
+
