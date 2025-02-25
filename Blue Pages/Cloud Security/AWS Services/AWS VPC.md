@@ -20,14 +20,37 @@ When creating a custom VPC, by default it will be generated with one primary pri
 - Optionally it can have a IPv6 /56 CIDR block
 
 #### DNS in a VPC
-DNS in a VPC is provided by Route53 by default, and will be the VPC 'base IP +2' address. Ex. Base IP = 10.0.0.0 then first instance will be 10.0.0.2
+DNS in a VPC is provided by Route53 by default, and will be the VPC 'base IP +2' address. Ex. Base IP = 10.16.0.0 then first instance will be 10.16.0.2
 
 There are two DNS options
 - 'enableDnsHostname' - Give instances DNS hostnames
 - 'enableDnsSupport' - Enabled DNS resolution in the VPC. Hosts can use the DNS address to resolve the host in the VPC
 
 #### Subnet Routing
-- Configure public IPs or private IPs to restrict access to the internet.  Give your public instances an IPv4 address, IPv6 address or both. 
+- Configure public IPs or private IPs to restrict access to the internet.  Give your public instances an IPv4 address, IPv6 address or both.
+- Subnets are hosted in Availability Zones (AZs). A subnet can not span AZs
+- Subnets cannot overlap with other subnet ranges within a VPC
+- Subnets can communicate with other subnets in the VPC
+
+
+##### Subnet IP Addressing
+For this example, lets say that we have an subnet range of 10.16.16.0/20 (10.16.16.0 => 10.16.31.225)
+- Reservered IP addresses: The first 4 IPs, and the last IP in the subnet range are reserved in AWS VPCs.
+  - 10.16.16.0 : Network Address (Represents the starting address of the network)
+  - 10.16.16.1 : VPC Router (logical network device used to move traffic within and optionally outside of the subet)
+  - 10.16.16.2 : Reservered for DNS
+  - 10.16.16.3 : Reserverd for future use
+  - 10.16.31.255 : Last IP in subnet
+ 
+##### DHCP Option Sets (DHCP in a VPC)
+In AWS you can either use explicitly customer provided values or AWS provided through VPC DNS (Route53)
+
+- DHCP option sets can be assocaited with 0 or more VPCs.
+- DHCP option sets cannot be edited once created.
+- DHCP option sets can be associaetd to a VPC immediately, but require a DHCP Renew for changes to take effect, which takes time
+- AWS Supply public and private DNS names. To use custom domains you need to use custom DNS servers:
+  - Private Ex. ip-10-16-16-14.us-west-2.compute.internal
+  - Public Ex. 55.55.54.53.us-west-2.compute.amazonaws.com
 
 #### Network ACLs (NACLs)
 - Acts as a virtual firewall in front of your resources at the subnet level. By default all traffic is allowed.
