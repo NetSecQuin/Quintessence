@@ -36,3 +36,4 @@ What we can do is change the permissions of the policy attached to the compromis
 
 Unfortunately this will impact any user that is assuming that role, and as roles are meant to be used by multiple users, this could cause productivity loss. In order to get around this, we can create a conditional inline policy to deny any sessions older than a specific date. This essentially forces a new session to be created for users. 
 
+Note: If the compromised role is an Instance Profile Role (is tied to an EC2 instance for interaction from the host to other AWS services), the EC2 instance will need to be resetted in order to get a new, valid, set of tempoary credentials. 
