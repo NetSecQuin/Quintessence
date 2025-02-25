@@ -71,6 +71,7 @@ DHCP option sets define how IP addresses are assigned in your VPC to resources. 
 #### Network ACLs (NACLs)
 - Acts as a virtual firewall in front of your resources at the subnet level. By default all traffic is allowed.
 - Configurable to allow or deny traffic based on specific IPs, protocols, or ports into or out of the VPC.
+- As they filter traffic crossing the subnet boundry, they do not inspect traffic between resources within a subnet. 
 
 #### Security Groups
 - Acts as virtual firewalls for your instances specifically. When creating an instances, you must pick security group(s) for it.
