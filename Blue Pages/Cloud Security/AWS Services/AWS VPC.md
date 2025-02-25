@@ -26,12 +26,27 @@ There are two DNS options
 - 'enableDnsHostname' - Give instances DNS hostnames
 - 'enableDnsSupport' - Enabled DNS resolution in the VPC. Hosts can use the DNS address to resolve the host in the VPC
 
+#### VPC Router
+The virtual router within a VPC, which is automatically provisioned in all AZs within the VPC. They require no performance managmenet 
+
+- Routes traffic
+  - From one subnet to another across AZs
+  - From external networks into the VPC
+  - From the VPC into external networks
+  - Assigned "subnet+1" address in every subnet. (Ex. Subnet range = 10.16.16.0/16. VPC Router IP = 10.16.16.1)
+ 
+  - 
 #### Subnet Routing
 - Configure public IPs or private IPs to restrict access to the internet.  Give your public instances an IPv4 address, IPv6 address or both.
 - Subnets are hosted in Availability Zones (AZs). A subnet can not span AZs
 - Subnets cannot overlap with other subnet ranges within a VPC
 - Subnets can communicate with other subnets in the VPC
 
+Routing is defined through Route tables. 
+A route table designates which route the router will use to find the destination address. i.e Who the router will ask "do you know dest.ip?" first.
+- Every VPC is created with a main route table by default. **A subnet is assoicated with only one Route Table**
+- The main route table can be replaced with a custom route table.
+- The router will preference the more specific subnet range specificed that matches its destination
 
 ##### Subnet IP Addressing
 For this example, lets say that we have an subnet range of 10.16.16.0/20 (10.16.16.0 => 10.16.31.225)
@@ -43,7 +58,8 @@ For this example, lets say that we have an subnet range of 10.16.16.0/20 (10.16.
   - 10.16.31.255 : Last IP in subnet
  
 ##### DHCP Option Sets (DHCP in a VPC)
-In AWS you can either use explicitly customer provided values or AWS provided through VPC DNS (Route53)
+In AWS you can either use explicitly customer provided values or AWS provided through VPC DNS (Route53).
+DHCP option sets define how IP addresses are assigned in your VPC to resources. For example defining the reserverd IP addresses. 
 
 - DHCP option sets can be assocaited with 0 or more VPCs.
 - DHCP option sets cannot be edited once created.
