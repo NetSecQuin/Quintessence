@@ -123,3 +123,7 @@ AWS also has *Edge Data Centers*, which are in 310* different locations than Ava
 
 #### [Lambda]()
 
+## Random Pages
+
+[Public vs Private Services](https://github.com/NetSecQuin/Quintessence/blob/main/Blue%20Pages/Cloud%20Security/AWS%20Services/Public%20vs%20Private%20Services.md) - Describes the AWS public zone, and AWS Private zone, and how it relates to the 'Public Internet'
+
