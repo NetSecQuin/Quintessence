@@ -69,15 +69,49 @@ DHCP option sets define how IP addresses are assigned in your VPC to resources. 
   - Public Ex. 55.55.54.53.us-west-2.compute.amazonaws.com
 
 #### Network ACLs (NACLs)
-- Acts as a virtual firewall in front of your resources at the subnet level. By default all traffic is allowed.
+- Acts as a virtual firewall in front of your resources at the subnet level. Offers explicit allows and explicit denies. Default is to allow all. 
 - Configurable to allow or deny traffic based on specific IPs, protocols, or ports into or out of the VPC.
-- As they filter traffic crossing the subnet boundry, they do not inspect traffic between resources within a subnet. 
+- As they filter traffic crossing the subnet boundry, they do not inspect traffic between resources within a subnet.
+- Rules are processed in order, lowest rule number first. If a earlier rule says deny and a later rule says allow, the traffic will be denied.
+- Stateless, so they cannot detect whether the packet is a request or a response. Blocking soley based upon traffic direction.
+  - Therefore: Because http/https traffic communicates over TCP, we will have a response on an ephemeral port between 1024 - 65535. An Example NACL policy to allow all HTTPS traffic would be
+    - Inbound Allow 0.0.0.0/0 port 443 : Deny 0.0.0.0/0 all
+    - Outbound Allow 0.0.0.0/0 port 1024-65535 : Deny 0.0.0.0/0 all
+ - AWS prefers you to use security groups, which is why the default NACL is allow all. However, custom NACLs are deny all by default.
+ - Can only reference IP ranges and IP addresses. Can not use logical resources. 
+ - Used instead of security groups to block 'bad/malicious IPs' or networks. NACLs would be better for blocking a malicious IP.
+ - Can be associated with multiple subnets
+
+#### Internet Gateways
+*Can* be created and attached to AWS VPCs
+- 1 to 1 relationship with VPC. 1 VPC : 1 IG
+- Used to access AWS public services and public internet
+- Works across all AZs in your VPC, and resilient to AZ faliure. Can be used to route to secondary AZ when there is an outage/failure. 
+- Works with IPv4 and IPv6 ingress & egress.
+  - IPv4 : Static NAT - Private IPv4 back and forth between Public IPv4. Static NAT requires the instance to have an allocated public IP address
+  - IPv6 : IPv6 does not distinguish Private/Public so there is no back and forth translation.
+ 
+In order to access AWS public services and public internet, an internet gateway must be used. To do this via the **IPv4 Static NAT** method:
+- 1.) Create IGW and attach it to the VPC
+- 2.) Create a custom Route Table and associate that the subnet you want to have public internet access
+- 3.) Configure the route tables default routes to forward to the IGW.
+- 4.) Configure the subnet to allocate public IP addresses to each of the instances in the subnet.
+- 5.) The IGW will recieve the packets and translates the private IPv4 address to its public IPv4 during external communication. 
+
+###### Egress-Only Internet Gateways
+Since IPv6 does not differentiate Private/Public, we must use Egress-Only Internet Gateways. 
+- Exactly the same as a regular internet gateway, how we use it slightly differs.
+  - Acts as the NAT for IPv6?
+
+
 
 #### Security Groups
 - Acts as virtual firewalls for your instances specifically. When creating an instances, you must pick security group(s) for it.
-- Security Groups are stateful. If a connection is allowed inbound, responses will be allowed outbound, and vise versa.
+- Security Groups are stateful. Therefore when comunicating or accessesing a site/application over TCP, it can detect and group request and response packets on ephemeral ports. Therefore a block on outbound requests to an IP will also block response packets
 - By default traffic is blocked inbound, unless specified by a security group.
-
-
+- NO EXPLICIT DENY.. only allow or implicit deny - can't block bad actors.
+- Supports IP/CIDR and **logicial resources**
+- Attached to ENIs not instances (even though it may look the other way in the console)
+- REVIEW THIS AGAIN: "a 'SG source' is the same as "anything with the SG attached". Using a 'self-reference', means "anything with this SG attached.
 
 ![](https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721163600/qQMAeir7CedYq2w0pM_zlw/tincan/1795780_1704469401_o_1hjd4l7tc11hedc913i09dklbhj_zip/assets/tIGAAOvXG7iOcSTU_u1HIeJqGSJ0Dp5cG.png)
