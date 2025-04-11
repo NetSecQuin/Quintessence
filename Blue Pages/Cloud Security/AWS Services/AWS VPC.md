@@ -138,7 +138,7 @@ Uses PrivateLink to inject AWS or 3rd party services network interfaces inside y
 - Any service except DynamoDB (S3 was just added)
 - not highly available by default. Is an ENI added to specific subnets. It can become highly available if you add one endpoint, to one subnet, per AZ used in the VPC. 
 - Uses security groups to control network access
-- Endpoint policies (Ex. S3 Bucket policy) restrict what can be down with the endpoint
+- Endpoint policies restrict what can be down with the endpoint. Endpoint policies are attached to the of the instance or interface endpoint.
 - TCP and IPv4 ONLY
 - Creates a endpoint DNS name for accessing the service
   - Ex. vpc1-123-abc.sns.us-west-2.vpc1.amazonaws.com
