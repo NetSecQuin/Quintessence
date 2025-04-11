@@ -115,3 +115,34 @@ Since IPv6 does not differentiate Private/Public, we must use Egress-Only Intern
 - REVIEW THIS AGAIN: "a 'SG source' is the same as "anything with the SG attached". Using a 'self-reference', means "anything with this SG attached.
 
 ![](https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721163600/qQMAeir7CedYq2w0pM_zlw/tincan/1795780_1704469401_o_1hjd4l7tc11hedc913i09dklbhj_zip/assets/tIGAAOvXG7iOcSTU_u1HIeJqGSJ0Dp5cG.png)
+
+
+
+### VPC Endpoints
+
+#### Gateway VPC Endpoints
+
+Provide private access to supported services (At this time S3 & DynamoDB) [Which are public resources* and exsist in the AWS public zone outside of any VPCs.]
+- Use a prefix list added to route-table to describe the gateway endpoint. describes route to gateway endpoint instead of subnets
+- It is highly avaiable across all AZ in a region by default. 
+- Endpoint policy (Ex. Bucket resource policy) is used to control what it can access
+- They are regional, and cant access cross-region services.
+- Help with locking down an S3 bucket by only allowing access from a gateway endpoint.
+  - Useful for An instance needing to access an S3 bucket, but we do not want to provide access to the internet. 
+
+
+
+#### Interface VPC Endpoints
+
+Uses PrivateLink to inject AWS or 3rd party services network interfaces inside your private VPC and given network interfaces for internal communciation.  
+- Any service except DynamoDB (S3 was just added)
+- not highly available by default. Is an ENI added to specific subnets. It can become highly available if you add one endpoint, to one subnet, per AZ used in the VPC. 
+- Uses security groups to control network access
+- Endpoint policies (Ex. S3 Bucket policy) restrict what can be down with the endpoint
+- TCP and IPv4 ONLY
+- Creates a endpoint DNS name for accessing the service
+  - Ex. vpc1-123-abc.sns.us-west-2.vpc1.amazonaws.com
+    - Regional DNS names (unique to region)
+    - Zone based DNS (unqiue to zone)
+ - Private DNS associateds a private Route53 Hosted Zone to the VPC, cahnging the default service DNS to resolve to the interface endpoint ip
+   - This means that we do not need to make changes to the endpoints of the services themselves, but instead use a DNS overroute overide to route through the interface endpoint. 
