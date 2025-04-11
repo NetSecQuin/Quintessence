@@ -31,3 +31,14 @@ A connection, using IPSec for encrypion, over the public internet to connect a V
     - Virtual Private Gateway (VGW) - See above
     - Customer Gateway (CGW) - Customer on-prem router that handles the routing to the VGW. Single point of failure with only one, best practice is to have a 1+ at different locations. 
         - VPN Connection is between the VGW and CGW
+     
+## Client VPN
+Like a Site2Site, but instead of connecting networks it connects and endpoint to a newtwork directly
+- Managed implementation of "OpenVPN"
+- Any client with OpenVPN software is supported
+- Associated with one VPC
+- Billed based on network associations
+
+The clients OpenVPN software changes the clients route-table to forward all traffic through the Client VPN endpoint. If the client wants internet access post VPN endpoint, the Client VPN ENI would forward traffic to a NATGW and onto the internet. 
+
+A split tunnel client VPN is where the route table is not overwritten but added to the bottom. This way, typical internet traffic routes over the internet, but the client will be routed to the private network if the address is not found. THIS IS NOT THE DEFAULT, MUST BE ENABLED.
