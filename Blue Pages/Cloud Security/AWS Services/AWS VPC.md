@@ -145,4 +145,10 @@ Uses PrivateLink to inject AWS or 3rd party services network interfaces inside y
     - Regional DNS names (unique to region)
     - Zone based DNS (unqiue to zone)
  - Private DNS associateds a private Route53 Hosted Zone to the VPC, cahnging the default service DNS to resolve to the interface endpoint ip
-   - This means that we do not need to make changes to the endpoints of the services themselves, but instead use a DNS overroute overide to route through the interface endpoint. 
+   - This means that we do not need to make changes to the endpoints of the services themselves, but instead use a DNS overroute overide to route through the interface endpoint.
+  
+###### VPC Endpoint Policies
+VPC Endpoints (vpce) allow access to an entire service in a region.
+- limits access via that endpoint only
+- Contains a principal and conditions
+- Commonly used to limit what private VPCs can access. Instead of providing a private VPC with full access to anything accessible in a service like S3, the endpoint policy can limit how it is used. (Ex. Company has 1 private s3 bucket and 1 public to anyone s3 bucket. If we want to only allow access to the private s3 bucket, we can limit the services use with an endpoint policy. )
