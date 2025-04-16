@@ -161,6 +161,7 @@ Direct encrypted network link between **two** VPCs.
 - Routing configureation is needed security groups (SG) and NACLs
 - Route tables at both sides of the peering connection are needed to direct traffic for the remote CIDR at the peer gateway object.
 - VPC Peering connections cant be created if there is an overlap in VPC CIDRs.
+- Follows a requester and request accepter flow, where you request to create a peering connection and the owner of the other VPC must accept. 
 
 
 
