@@ -152,3 +152,16 @@ VPC Endpoints (vpce) allow access to an entire service in a region.
 - limits access via that endpoint only
 - Contains a principal and conditions
 - Commonly used to limit what private VPCs can access. Instead of providing a private VPC with full access to anything accessible in a service like S3, the endpoint policy can limit how it is used. (Ex. Company has 1 private s3 bucket and 1 public to anyone s3 bucket. If we want to only allow access to the private s3 bucket, we can limit the services use with an endpoint policy. )
+
+#### VPC Peering
+Direct encrypted network link between **two** VPCs. 
+- Works same/cross-region and same/cross-account
+- Same region SGs can reference peer SGs (security groups)
+- VPC peering does **not** support transitive peering. Ex. IF VPC-A peers to VPC-B, and VPC-B peers to VPC-C. VPC-A DOES NOT ROUTE TO VPC-C.
+- Routing configureation is needed security groups (SG) and NACLs
+- Route tables at both sides of the peering connection are needed to direct traffic for the remote CIDR at the peer gateway object.
+- VPC Peering connections cant be created if there is an overlap in VPC CIDRs.
+
+
+
+
