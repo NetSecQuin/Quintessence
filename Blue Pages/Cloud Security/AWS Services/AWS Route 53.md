@@ -16,3 +16,19 @@ To learn more, see [Amazon Route 53](https://aws.amazon.com/route53/).
 
 
 ![](https://d1.awsstatic.com/Route53/product-page-diagram_Amazon-Route-53_HIW%402x.4c2af00405a0825f83fca113352b480b19d9210e.png)
+
+
+### VPC DNS // Route53 Resolver
+- The .2 is reserved in every subnet for DNS (Ex. 10.16.0.**2**).
+- Provides Route53 Public & Associated Private Zones
+- Only accessible from within a VPC
+- Had drawbacks with hybrid environments due to on-prem private networks not being able to resolve DNS hostnames of resources within the AWS VPC because Route53 Resolver is only accessible from within the VPC. This led to the creation of *Route53 Endpoints*
+  - Before Route53 Endpoints, best practice was to use an EC2 instance running within the VPC acting as an intermidiary DNS forwarder via DHCP. Requests arrive and are forwarded to the Route53 Resolver or to on-prem DNS servers if configured. 
+
+### Route53 Endpoints
+Route 53 Endpoints are:
+- VPC Interfaces (ENIs) - Accessible over VPN or Direct connect instead of EC2 intermidiary
+- Inbound = On-prem can forward to the Route53 Resolver
+- Outbound- Conditional Forwards from the Route53 Resolver to On-Prem network
+  - Rules control which request are forwarded
+  
