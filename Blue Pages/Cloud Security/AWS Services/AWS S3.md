@@ -87,4 +87,11 @@ Access to S3 buckets can be achieved across accounts via *ACLs (Legacy)*, *Bucke
 #### Object Ownership
 
 When dealing with cross account access to S3, there are settings to define whether an objects is owned by the account that added the file to the S3 bucket, or the account that owns the S3 bucket. This can be defined in settings, and can be the cause of some access errors.
-- Because of this, it makes more sense to use Assuming a Role, as it prevents issues where ownership of the bucket and its objects vary. 
+- Because of this, it makes more sense to use Assuming a Role, as it prevents issues where ownership of the bucket and its objects vary.
+
+### Private S3 buckets
+Resources in a private VPC can interact with S3 buckets in S3 (a public service) via a *Gateway Endpoint*. Bucket policies can be used to restrict access to only that gateway endpoint, ensuring that only private network traffic is allowed to an S3 bucket. Then the Gateway Endpoint policy can restrict access to S3 buckets at a network level. 
+
+Otherwise, if a principal has access to an S3 bucket, they can preform the actions alloted by the IAM policy from any network. Ex. If you had an S3 bucket with sensative data inside, making it only accessible from a private VPC ensures that if a TA was to get access to AWS credentials, they would also need to have access to a resource within the private VPC. That VPC could also have a link into an on-prem network, ensuring only those on VPN can access it. 
+
+
