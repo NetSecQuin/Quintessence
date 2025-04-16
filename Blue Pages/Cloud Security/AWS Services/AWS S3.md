@@ -94,4 +94,8 @@ Resources in a private VPC can interact with S3 buckets in S3 (a public service)
 
 Otherwise, if a principal has access to an S3 bucket, they can preform the actions alloted by the IAM policy from any network. Ex. If you had an S3 bucket with sensative data inside, making it only accessible from a private VPC ensures that if a TA was to get access to AWS credentials, they would also need to have access to a resource within the private VPC. That VPC could also have a link into an on-prem network, ensuring only those on VPN can access it. 
 
-
+### S3 Access Points
+Used for simplifying managing access to S3 buckets/objects instead of 1 bucket w/ 1 bucket policy.
+- You create many access points, each with different policies, each with different network access controls, each with their own endpoint address
+- Created via either console or cli via the command ```aws s3control create-access-point --name secretdogpics --account-id 123456789010 --bucket dogpics```
+- You can restrict access to S3 access points to only allow traffic from specific VPCs. 
