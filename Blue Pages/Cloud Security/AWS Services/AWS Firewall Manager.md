@@ -14,3 +14,8 @@ To learn more, see [AWS Firewall Manager](https://aws.amazon.com/firewall-manage
 - Write a single set of firewall and WAF rules that can be pushed/replicated to numerous services and applications
 
 ![](https://d1.awsstatic.com/products/firewall-manager/product-page-diagram_AWS-Firewall-Manager%402x%20(1)1.ad6bf5281dc2c33c0493e9988e3504dd1590eaa2.png)
+
+
+### AWS Network Firewall
+A regional product that creates a network firewall subnet within your VPC included with network firewall endpoints. 
+- Traffic flows into the VPC to the Firewall subnets via route tables. Firewall subnets route traffic with their attached route table to the network firewall endpoint. The network firewall endpoint audits the request, passes it back to the firewall subnet, which then follows the route table rule for traffic coming from the firewall endpoint, and forwards it to the subnet where the target resource is located.
