@@ -98,4 +98,9 @@ Otherwise, if a principal has access to an S3 bucket, they can preform the actio
 Used for simplifying managing access to S3 buckets/objects instead of 1 bucket w/ 1 bucket policy.
 - You create many access points, each with different policies, each with different network access controls, each with their own endpoint address
 - Created via either console or cli via the command ```aws s3control create-access-point --name secretdogpics --account-id 123456789010 --bucket dogpics```
+
+### S3 Event Notifications
+Older feature, AWS EventBridge is an alternative and supports more types of events and services
+- Notifications generated when events occur in a bucket, which cna be delievered to SNS, SQS and Lambda Functions. 
+- Tracks events like object Created, deleted, restored, or replicated. 
 - You can restrict access to S3 access points to only allow traffic from specific VPCs. 
