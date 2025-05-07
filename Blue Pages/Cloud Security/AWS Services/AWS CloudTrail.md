@@ -19,3 +19,9 @@ Additional Details on [CloudTrail](https://docs.aws.amazon.com/awscloudtrail/lat
 - IAM, STS, CloudFront => Global Service Events which will require a trail to be enabled. It will log to US-EAST-1
 - NOT REALTIME - There is about a 15min delay
 
+#### CloudTrail Log File Integrity
+- Used for integrity validation of cloudtrial logs in S3. (How do you know nobody tampered with them?)
+- When you enable Log Validation; CloudTrail creats and signs digest files, each for an hour of log delivery. These digest files are stored in the same bucket, but in a differnet folder from the logs. You can then apply different security policies to the folders contianing the digest files.
+- Digest files contain a hash of every log file delivered in the last hour. AND contain the hash of the previous digest file.
+- CloudTrail signs each digest file with its private key
+- You can validate the logs and digest files through CLI  (validate-logs), but not the console UI. 
