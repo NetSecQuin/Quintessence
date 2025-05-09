@@ -104,3 +104,19 @@ Older feature, AWS EventBridge is an alternative and supports more types of even
 - Notifications generated when events occur in a bucket, which cna be delievered to SNS, SQS and Lambda Functions. 
 - Tracks events like object Created, deleted, restored, or replicated. 
 - You can restrict access to S3 access points to only allow traffic from specific VPCs. 
+
+
+### S3 Encryption at Rest
+Encryption at rest is mandatory in S3, whether via SSE or CSE.
+- S3 Server Side Encryption (SSE) is where the S3 endpoint/service encrypts the data as it is being stored at rest. 
+- Client Side Encryption (CSE) is where the user encrypts the data before it is uploaded to S3.
+  
+### S3 Server Side Encryption
+There are three options for S3 Server Side Encryion (SSE), each define how much trust you provide the S3 service. 
+- Server-Side Encryption w/ Customer-Provided Keys (SSE-C) - Uses keys provided and managed by the customer
+- Server-Side Encryption w/ Amazon S3-Managed Keys (SSE-S3) - This is the defualt that will be enabled. Remember encryption at rest is mandatory in S3.
+  - S3 Creates, Manages, and Rotates the key. You have no control of the key, and trust that the S3 service and AWS will effectively and securely discard of key data.
+- Server-Side Encryption w/ AWS KMS-Managed Keys (SSE-KMS)
+  - You can use a KMS managed or CMK managed key for ultimate flexability. The KMS key will be used to create the Data Encryption Key (DEK) by S3. Therefore KMS will not store the DEK and S3 will not hold the KMS/CMK key.
+  - Using KMS encryption prevents S3 administrators for decrypting the data inside of every bucket. Where with SSE-S3 and S3 admin would have all S3 permissions including decryption.
+
