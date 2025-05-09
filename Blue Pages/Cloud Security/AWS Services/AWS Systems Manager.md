@@ -15,3 +15,9 @@ AWS Systems Manager has capabilities that help you automate management tasks. Su
 
 For the complete list of features, see [AWS Systems Manager Features](https://aws.amazon.com/systems-manager/features/).
 
+## AWS Secrets Manager
+Shares some functionality with parmeter store but designed for secrets (passwords, api keys, etc.)
+- Usable via Console, CLI, API, or SDKs (integration
+- Supports automatic rotation using lambda functions, which is one of the primary differences bettween a hidden secret in parameter store 
+- Direclty integrates with some other AWS Prodcutions (Ex. RDS)
+- Integrates with IAM so you can set permissions of access by role based access control
