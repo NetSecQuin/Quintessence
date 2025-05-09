@@ -39,7 +39,7 @@ More information on [AWS Key Management](https://aws.amazon.com/kms/).
 - No cross-account usage due to the fixed key policy which locks it to the AWS account
 
 
-### Customer Managed Keys (CSM)
+### Customer Managed Keys (CMK)
 - Are more configurable and can allow cross account access as you have full control of the key policy.
 - This also means that the account trust restriction can be removed, or you can specific which accounts can use it. Restriciting access to AWS account administrators. 
 - Can be used by services whihc support customer managed keys (CMS)
