@@ -27,7 +27,20 @@ More information on [AWS Key Management](https://aws.amazon.com/kms/).
 - KMS Keys can be used for encryption up to 4KB of data. It is used for generating other keys when encrypting larger amounts of data via a Data Encryption Key (DEK)
   - KMS will not store or track the usage of the DEKs for you. Either you will store it, or the service you are using will store it (Ex. S3 SSE w/ DEKs)
 - KMS Keys have resource policies (Key Policy) that describe what AWS account is allowed to use it
- 
+
+
+### AWS Managed Keys
+- Created by AWS when you use encryption in a service
+- 1 per service per region  and named like aws/s3
+- Usable by that service in that region only
+- metadata can be read by the creator of the AWS account
+- The key policy (resource policy) can **not** be changed. It is AWS managed. It will be rotated every 365 datys by AWS by default.
+- No monthly cost , but has usage costs if you go past the free tier
+- No cross-account usage due to the fixed key policy which locks it to the AWS account
+
+
 ### Customer Managed Keys (CSM)
-- are more configurable and can allow cross account access
-- CMK keys can be rotated automatacially 
+- Are more configurable and can allow cross account access as you have full control of the key policy.
+- This also means that the account trust restriction can be removed, or you can specific which accounts can use it. Restriciting access to AWS account administrators. 
+- Can be used by services whihc support customer managed keys (CMS)
+- CMK keys **can** be rotated automatacially , but the default is 365 days which can be disabled. 
