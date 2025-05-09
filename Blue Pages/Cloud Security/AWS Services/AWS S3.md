@@ -119,4 +119,10 @@ There are three options for S3 Server Side Encryion (SSE), each define how much 
 - Server-Side Encryption w/ AWS KMS-Managed Keys (SSE-KMS)
   - You can use a KMS managed or CMK managed key for ultimate flexability. The KMS key will be used to create the Data Encryption Key (DEK) by S3. Therefore KMS will not store the DEK and S3 will not hold the KMS/CMK key.
   - Using KMS encryption prevents S3 administrators for decrypting the data inside of every bucket. Where with SSE-S3 and S3 admin would have all S3 permissions including decryption.
+  - Can become costly for lots of objects in a bucket due to the excessive API calls to the KMS service
 
+
+### Bucket Keys
+- CloudTrail will show the key related events as from the S3 service, not KMS.
+- Works with replication if you were to copy an encrypted object
+- If replicating plaintext to a bucket using bucket ketys, the object is iencrypted at the desitination side
