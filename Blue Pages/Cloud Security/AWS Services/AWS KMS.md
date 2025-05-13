@@ -109,3 +109,8 @@ When you need to improve integrity of a file that ensures it was not alterned.
 - Only supports symmetric keys
 - doesnt support automatic key rotation
 - "kmsuser" is created on the cloudHSM cluster
+
+
+### KMS Encryption Context
+Used to validate the integrity of the data with the use of Additional Authenticated Data (AAD)
+- Once data is encrypted, how can you be sure that the cipher text was not manipulated. This solves that by adding additional context to each value assoicating it to contextual values.
